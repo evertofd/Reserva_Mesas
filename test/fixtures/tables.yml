@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  chair: 1
+  available: false
+  space: one
+
+two:
+  chair: 1
+  available: false
+  space: two

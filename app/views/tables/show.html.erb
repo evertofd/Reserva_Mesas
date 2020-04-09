@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Chair:</strong>
+  <%= @table.chair %>
+</p>
+
+<p>
+  <strong>Available:</strong>
+  <%= @table.available %>
+</p>
+
+<p>
+  <strong>Space:</strong>
+  <%= @table.space %>
+</p>
+
+<%= link_to 'Edit', edit_table_path(@table) %> |
+<%= link_to 'Back', tables_path %>

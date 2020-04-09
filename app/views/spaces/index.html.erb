@@ -1,0 +1,28 @@
+
+
+
+<div class="container">
+  <div class="row">
+    <% @spaces.each do |space| %>
+    <div class="col text-center ">
+      <div class="card text-center" style="top:20px">
+        <div class="body">
+          <h3 class= "text-center"><%= space.name %></h3>
+        </div>
+        <%= image_tag space.url, class: 'img-pequeña', style:" margin-right: 90px;  margin-left: 230px "%>
+
+        <div class="btn btn-warning">
+          <i class="fas fa-hamburger"><%= link_to 'Continuar',  new_reservation_path(space.slug.parameterize) %></i>
+        </div>
+
+
+      </div>
+
+    </div>
+    <% end %>
+
+
+    <div class="w-100" style="margin-top:20px"> </div>
+
+  </div>
+</div>
