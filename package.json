@@ -1,5 +1,9 @@
 {
   "name": "Campeche2",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "fullcalendar": "^3.10.1",
+    "jquery": "^3.5.0",
+    "moment": "^2.24.0"
+  }
 }

@@ -17,7 +17,7 @@ class ReservationsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create reservation" do
     assert_difference('Reservation.count') do
-      post reservations_url, params: { reservation: { commentary: @reservation.commentary, date: @reservation.date, quantity: @reservation.quantity, telephone: @reservation.telephone } }
+      post reservations_url, params: { reservation: { commentary: @reservation.commentary, quantity: @reservation.quantity, start_date: @reservation.start_date, telephone: @reservation.telephone } }
     end
 
     assert_redirected_to reservation_url(Reservation.last)
@@ -34,7 +34,7 @@ class ReservationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update reservation" do
-    patch reservation_url(@reservation), params: { reservation: { commentary: @reservation.commentary, date: @reservation.date, quantity: @reservation.quantity, telephone: @reservation.telephone } }
+    patch reservation_url(@reservation), params: { reservation: { commentary: @reservation.commentary, quantity: @reservation.quantity, start_date: @reservation.start_date, telephone: @reservation.telephone } }
     assert_redirected_to reservation_url(@reservation)
   end
 

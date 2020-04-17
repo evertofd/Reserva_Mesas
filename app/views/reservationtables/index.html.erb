@@ -1,4 +1,4 @@
-<h1>Reservationtables#index</h1>
+<!-- <h1>Reservationtables#index</h1>
 <p>Find me in app/views/reservationtables/index.html.erb</p>
 
 <p id="notice"><%= notice %></p>
@@ -20,10 +20,12 @@
     <% @reservations.each do |reservation| %>
       <tr>
 
-        <td><%= reservation.date %></td>
+        <td><%= reservation.start_date %></td>
         <td><%= reservation.quantity %></td>
         <td><%= reservation.telephone %></td>
         <td><%= reservation.commentary %></td>
+        <td><%= reservation.tables.count%></td>
+        <td><%= current_user.email %></td>
         <td><%= link_to 'Show', reservation %></td>
         <td><%= link_to 'Edit', edit_reservation_path(reservation) %></td>
         <td><%= link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -32,6 +34,4 @@
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Reservation', new_reservation_path %>
+<br> -->
