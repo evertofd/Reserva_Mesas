@@ -22,3 +22,12 @@
 
 <%= link_to 'Edit', edit_reservation_path(@reservation) %> |
 <%= link_to 'Back', reservations_path %>
+
+<%= form_with(model: @reservation) do |form| %>
+<div class="actions">
+
+  <%= form.hidden_field :status, :value => "process"%>
+
+  <%= form.submit "Confimar" %>
+</div>
+<%end%>

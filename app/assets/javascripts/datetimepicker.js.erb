@@ -1,0 +1,42 @@
+document.addEventListener("turbolinks:load", function(){
+  $(".modal-body").on("focusin", '#reservation_start_date', function(){
+    $(this).datetimepicker({
+      widgetPositioning: {
+        horizontal: 'auto',
+        vertical: 'bottom'
+      },
+      icons: {
+        time: 'fa fa-clock-o',
+        date: 'fa fa-calendar',
+        up: 'fa fa-chevron-up',
+        down: 'fa fa-chevron-down',
+        previous: 'fa fa-chevron-left',
+        next: 'fa fa-chevron-right',
+        today: 'fa fa-calendar-check-o',
+        clear: 'fa fa-trash-o',
+        close: 'fa fa-close'
+      },
+    });
+  });
+
+  if($('#reservation_start_date').length){
+    $('#reservation_start_date').datetimepicker({
+      inline: true,
+      sideBySide: true,
+      keepOpen: true,
+      debug:true,
+      icons: {
+        time: 'fa fa-clock-o',
+        date: 'fa fa-calendar',
+        up: 'fa fa-chevron-up',
+        down: 'fa fa-chevron-down',
+        previous: 'fa fa-chevron-left',
+        next: 'fa fa-chevron-right',
+        today: 'fa fa-calendar-check-o',
+        clear: 'fa fa-trash-o',
+        close: 'fa fa-close'
+      },
+      format: 'DD/MM/YYYY HH:mm',
+    });
+  }
+});

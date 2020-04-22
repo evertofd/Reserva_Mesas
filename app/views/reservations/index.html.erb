@@ -1,3 +1,6 @@
+<div class="container">
+
+
 <p id="notice"><%= notice %></p>
 
 <h1>Reservations</h1>
@@ -41,13 +44,6 @@
 </table>
 
 <br>
-<div id='calendar'> </div>
-<script>
-  $('#calendar').fullCalendar({
-    events: '<%= reservations_path(format: "json") %>'
-
-
-    //[{ title: 'evento1', start: '2020-04-17T12:30:00'}]
-
-  })
-</script>
+<div id='calendar' data-token="<%= form_authenticity_token %>"> </div>
+<%= render 'modal' %>
+</div>

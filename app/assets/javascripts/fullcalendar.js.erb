@@ -1,0 +1,38 @@
+document.addEventListener("turbolinks:before-cache", function(){
+  $('#calendar').fullCalendar('destroy');
+});
+
+document.addEventListener("turbolinks:load", function(){
+
+  $('#calendar').fullCalendar({
+    events: '/reservations',
+    header:{
+      left: 'prev,next today',
+      center: 'title',
+      right: 'month,agendaWeek,agendaDay'
+    },
+
+
+    eventClick: function(reservation, jsReservation, view){
+      console.log(reservation);
+      $.ajax({
+        url: '/reservations/'+ reservation.id + '/edit',
+        type: 'GET',
+        dataType: 'script',
+      })
+    },
+    eventDrop: function( reservation, delta, revertFunc, jsReservation, ui,view){
+
+      console.log(reservation.start.format());
+      $.ajax({
+        url: '/reservations/'+ reservation.id,
+        type: 'PATCH',
+        dataType: 'script',
+        data: {reservation: {
+          start_date: reservation.start.format()},
+          authenticity_token: $("#calendar").data('token')
+        }
+      })
+    }
+  })
+});

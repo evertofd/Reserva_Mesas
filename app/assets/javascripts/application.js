@@ -13,6 +13,11 @@
 //= require rails-ujs
 //= require turbolinks
 //= require jquery/dist/jquery
+//= require tether/dist/js/tether
+//= require bootstrap/dist/js/bootstrap
 //= require moment/moment
+//= require moment-timezone/moment-timezone
+//= require bootstrap4-datetimepicker/build/js/bootstrap-datetimepicker.min
+//= require @fortawesome/fontawesome-free/js/all
 //= require fullcalendar/dist/fullcalendar
 //= require_tree .

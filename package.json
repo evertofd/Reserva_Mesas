@@ -2,6 +2,9 @@
   "name": "Campeche2",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.13.0",
+    "bootstrap": "4.0.0-alpha.6",
+    "bootstrap4-datetimepicker": "^5.2.3",
     "fullcalendar": "^3.10.1",
     "jquery": "^3.5.0",
     "moment": "^2.24.0"

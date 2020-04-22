@@ -1,6 +1,8 @@
 # Rails.application.routes.draw do
 
 
+
+
 # #  get 'reservationtables/index'
 #
 #
@@ -24,6 +26,8 @@
 
 Rails.application.routes.draw do
 
+  get 'home/index'
+
   #resources :reservations
 #  get 'reservationtables/index'
 
@@ -33,7 +37,7 @@ Rails.application.routes.draw do
 get 'reservations/:type/new' => 'reservations#new', as: 'new_reservation'
 
 
-  
+
   resources :reservations do
     collection do
     end
