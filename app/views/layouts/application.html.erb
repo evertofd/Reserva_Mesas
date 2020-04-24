@@ -3,24 +3,32 @@
 <head>
   <title>Campeche2</title>
   <%= csrf_meta_tags %>
+
+  <!-- fontawesome CDN -->
   <script src="https://use.fontawesome.com/e48058af53.js"></script>
   <link href="//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  <!--Bootswatch CDN-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%# <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%# <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
 </head>
 
 <body style = " margin-top: 0px; margin-right: 0px; margin-left: 0px; margin-bottom: 0px;">
-
-
-  <%= render 'layouts/navbar' %>
-
 
   <div class="flash">
     <%= render 'layouts/alert' %>
   </div>
 
+  <%= render 'layouts/navbar' %>
+
+  
 
 
   <%= yield %>

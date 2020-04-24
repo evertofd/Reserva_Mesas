@@ -1,49 +1,34 @@
+<% if current_user.admin? %>
+<%= render 'layouts/barraAdmin'%>
+<%end%>
 <div class="container">
-
 
 <p id="notice"><%= notice %></p>
 
-<h1>Reservations</h1>
+<h1 class="text-center text-white">CALENDARIO DE RESERVACIONES</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Start date</th>
-      <th>title</th>
-      <th>Quantity</th>
-      <th>Telephone</th>
-      <th>Commentary</th>
-      <th>Table</th>
-      <th>User</th>
-      <th>mesa</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% @reservations.each do |reservation| %>
-    <tr>
 
-      <td><%= reservation.start_date %></td>
-      <td><%= reservation.title %></td>
-      <td><%= reservation.quantity %></td>
-      <td><%= reservation.telephone %></td>
-      <td><%= reservation.commentary %></td>
-      <td><%= reservation.tables.count%></td>
 
-      <!--    <td>reservation.user.nil??"":reservation.user.email </td>-->
+    <% reservation.start_date %>
+    <% reservation.title %>
+    <% reservation.quantity %>
+    <% reservation.telephone %>
+    <% reservation.commentary %>
+    <% reservation.tables.count%>
+
+      <!--  reservation.user.nil??"":reservation.user.email -->
       <!-- reservation.try(:user).try(:email) -->
-      <td><%= (reservation.user.nil?)?"-":reservation.try(:user).email %></td>
-      <td><%= reservation.tables.first.space.name %></td>
-      <td><%= link_to 'Show', reservation %></td>
-      <td><%= link_to 'Edit', edit_reservation_path(reservation) %></td>
-      <td><%= link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
+    <% (reservation.user.nil?)?"-":reservation.try(:user).email %>
+    <% reservation.tables.first.space.name %>
+    <% link_to 'Show', reservation %>
+    <% link_to 'Edit', edit_reservation_path(reservation) %>
+    <% link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' } %>
+
     <% end %>
-  </tbody>
-</table>
+
 
 <br>
-<div id='calendar' data-token="<%= form_authenticity_token %>"> </div>
+<div class="text-white text-uppercase" id='calendar' data-token="<%= form_authenticity_token %>"> </div>
 <%= render 'modal' %>
 </div>

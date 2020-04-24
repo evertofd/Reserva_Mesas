@@ -37,6 +37,7 @@
   <%= form.text_area :commentary, id: :reservation_commentary %>
 </div>
 
+  <% if current_user.admin? %>
 <div class="field">
 
   <% if @reservation.status == 'created' %>
@@ -56,7 +57,7 @@
   <%= form.radio_button :status, "finished", checked: true %> Finalizada
   <%end%>
 </div>
-
+  <%end%>
 <div class="actions">
   <%= form.submit %>
 </div>

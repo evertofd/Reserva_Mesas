@@ -1,13 +1,17 @@
 class ReservationsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_reservation, only: [:show, :edit, :update, :destroy]
-
+   load_and_authorize_resource
+   skip_authorization_check
   # GET /reservations
   # GET /reservations.json
   def index
     @reservations = Reservation.where(status: 'process')
   end
 
+  def bookings
+    @reservations = Reservation.all
+  end
   # GET /reservations/1
   # GET /reservations/1.json
   def show
@@ -58,7 +62,7 @@ class ReservationsController < ApplicationController
   # PATCH/PUT /reservations/1
   # PATCH/PUT /reservations/1.json
   def update
-  
+
     tables_availables = @reservation.tables
 
      if params[:reservation][:status] == 'process'
@@ -93,6 +97,7 @@ end
   # DELETE /reservations/1
   # DELETE /reservations/1.json
   def destroy
+
     @reservation.destroy
     respond_to do |format|
       format.html { redirect_to reservations_url, notice: 'Reservation was successfully destroyed.' }

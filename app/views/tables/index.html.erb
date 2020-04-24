@@ -1,13 +1,21 @@
+<% if current_user.admin? %>
+<%= render 'layouts/barraAdmin'%>
+<%end%>
+<div class="container text-center ">
+
 <p id="notice"><%= notice %></p>
 
-<h1>Tables</h1>
+<h1 class="text-white">Mesas</h1>
 
-<table>
+<table class="table table-striped table-hover text-white ">
+
   <thead>
     <tr>
-      <th>Chair</th>
-      <th>Available</th>
-      <th>Space</th>
+      <th>NUMERO</th>
+      <th>SILLAS</th>
+      <th>DISPONIBLE</th>
+      <th>ESPACIO</th>
+      <th>OPCIONES</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,12 +23,12 @@
   <tbody>
     <% @tables.each do |table| %>
       <tr>
+        <td><%= table.table_number %></td>
         <td><%= table.chair %></td>
         <td><%= table.available %></td>
         <td><%= table.space.slug %></td>
-        <td><%= link_to 'Show', table %></td>
-        <td><%= link_to 'Edit', edit_table_path(table) %></td>
-        <td><%= link_to 'Destroy', table, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_table_path(table), class: 'btn btn-primary text-white' %></td>
+        <td><%= link_to 'Destroy', table, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger text-white' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +36,8 @@
 
 <br>
 
-<%= link_to 'New Table', new_table_path %>
+<%= link_to 'NUEVA MESA', new_table_path, class: 'btn btn-warning' %>
+
+
+
+</div>

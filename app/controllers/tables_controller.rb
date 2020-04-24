@@ -1,6 +1,8 @@
 class TablesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_table, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  skip_authorization_check
   # GET /tables
   # GET /tables.json
   def index

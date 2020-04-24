@@ -1,0 +1,45 @@
+<% if current_user.admin? %>
+<%= render 'layouts/barraAdmin'%>
+<%end%>
+<div class="container">
+
+<p id="notice"><%= notice %></p>
+
+<h1 class= "text-white text-center">Reservaciones</h1>
+
+<table class="table table-striped table-hover text-white ">
+  <thead>
+    <tr>
+      <th>DIA</th>
+      <th>CANTIDAD</th>
+      <th>TELEFONO</th>
+      <th>COMENTARIOS</th>
+      <th>CANTIDAD DE MESAS</th>
+        <th>ESPACIO</th>
+      <th>USUARIO</th>
+  <th>ESTADO</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reservations.each do |reservation| %>
+    <tr>
+
+      <td><%= reservation.start_date %></td>
+      <td><%= reservation.quantity %></td>
+      <td><%= reservation.telephone %></td>
+      <td><%= reservation.commentary %></td>
+      <td><%= reservation.tables.count%></td>
+      <td><%= reservation.tables.first.space.name %></td>
+      <!--    <td>reservation.user.nil??"":reservation.user.email </td>-->
+      <!-- reservation.try(:user).try(:email) -->
+      <td><%= (reservation.user.nil?)?"-":reservation.try(:user).email %></td>
+      <td><%= reservation.status%></td>
+      <td><%= link_to 'Show', reservation, class: 'btn btn-primary text-white' %></td>
+      <td><%= link_to 'Edit', edit_reservation_path(reservation), class: 'btn btn-warning text-white' %></td>
+      <td><%= link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger text-white' %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

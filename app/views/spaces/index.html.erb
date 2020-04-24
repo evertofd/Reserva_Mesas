@@ -1,31 +1,19 @@
 
-<section class="salon">
-  <div class="container">
-
-
-    <div class="row">
+<section class="salon ">
+  <div class="container centro  ">
+    <div class="row ">
       <% @spaces.each do |space| %>
-      <div class="col text-center ">
-        <div class="card text-center" style="top:20px">
-          <div class="body">
-            <h3 class= "text-center"><%= space.name %></h3>
-          </div>
-          <%= image_tag space.url, class: 'img-pequeña', style:" margin-right: 90px;  margin-left: 230px "%>
-          <%= image_tag 'Dedo.png', style:"width:100px" %>
+      <div class="col text-center">
+        <div class="col-md-8 text-center ">
 
-          <div class="btn btn-warning">
-          <%= link_to 'Continuar',  new_reservation_path(space.slug.parameterize) %>
-          </div>
-
-
+          <h1 class= " font-weight-bold text-white" ><%= space.name %></h1>
+          <%= link_to (image_tag 'Dedo.png', style:"width:50px"),  new_reservation_path(space.slug.parameterize) %>
         </div>
-
       </div>
+
       <% end %>
 
-
-      <div class="w-100" style="margin-top:20px"> </div>
-
+      <div class="w-100" style="margin-top:10px"> </div>
     </div>
   </div>
-</section> >
+</section>
