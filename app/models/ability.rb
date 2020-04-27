@@ -10,6 +10,7 @@ class Ability
       if user.admin?
          can :manage, :all
        else
+         can :create, Post, user_id: user.id
          can :create, Contact
          can :read, :all
          can :create, Reservation

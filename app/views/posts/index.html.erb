@@ -1,0 +1,49 @@
+
+<p id="notice"><%= notice %></p>
+<h2 class="h1-responsive font-weight-bold text-center my-4 text-white">Comentarios</h2>
+<p class="text-center text-white"><%= link_to 'Crear un Comentario', new_post_path,class: 'btn btn-sm btn-success text-white'%></p>
+<div class="row py-5 mt-4 align-items-center">
+  <!-- For Demo Purpose -->
+  <div class="col-md-3 pr-lg-4 mb-5 mb-md-0">
+    <img src='<%= asset_path "comentarios.png" %>' class="img-fluid mb-3 d-none d-md-block" style="margin-left: 80px;">
+    <p class="font-italic text-white mb-0 "  style="margin-left: 150px;">Cuentanos sobre tu experiencia!.</p>
+  </div>
+
+
+  <div class="col-md-9 col-lg-8 ml-auto">
+    <div class="py-5">
+      <div class="row">
+        <div class="col-lg-9 mx-auto">
+
+          <% @posts.each do |post| %>
+          <div class="card shadow mb-4">
+            <div class="card-body shadow-sm p-5">
+
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb breadcrumb-bullet">
+
+
+                  <li class="breadcrumb-item text-uppercase"><strong>Usuario:</strong> <%= post.user.email %></li>
+                  <li class="breadcrumb-item text-uppercase text-right"><%= DateTime.now.strftime("%d-%m-%Y") %></li>
+
+                </ol>
+              </nav>
+
+              <p class="font-italic text-muted">		<%= post.content %></p>
+            </div>
+
+            <% if current_user.admin? %>
+            <%= link_to 'Editar', edit_post_path(post), class: 'btn btn-sm btn-success' %>
+            <%= link_to 'Eliminar', post, method: :delete, data: { confirm: 'Estás seguro que deseas eliminar el Post?' }, class: 'btn btn-sm btn-danger' %>
+            <% end %>
+          </div>
+
+          <br>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>

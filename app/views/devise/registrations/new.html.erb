@@ -99,13 +99,14 @@
 
 
           <!-- Social Login -->
+          <%- if devise_mapping.omniauthable? %>
+          <%- resource_class.omniauth_providers.each do |provider| %>
           <div class="form-group col-lg-12 mx-auto">
-            <a href="#" class="btn btn-primary btn-block py-2 btn-facebook">
-              <i class="fab fa-facebook-f"></i>
-              <span class="font-weight-bold">Ingresar con Facebook</span>
-            </a>
+            <%= link_to "Ingresar con #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), class: "font-weight-bold btn btn-primary btn-block py-2 btn-facebook text-white" %>
           </div>
-
+          <% end %>
+          <% end %>
+          
 
           <!-- Already Registered -->
           <div class="text-center w-100">

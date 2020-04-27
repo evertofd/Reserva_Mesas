@@ -5,7 +5,9 @@ class User < ApplicationRecord
   :recoverable, :rememberable, :validatable,
   :omniauthable, :omniauth_providers => [:facebook]
 
+
   has_many :reservations
+  has_many :posts, dependent: :destroy
   #has_many :reservations, through: :reservations
 
 

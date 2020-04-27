@@ -22,17 +22,16 @@
       <li class="nav-item active"style = 'margin-right: 80px'><a class="text-white" href="#">Menú</a></li>
       <li class="nav-item active"style = 'margin-right: 80px'><a class="text-white" href="<%= spaces_path %>">Reserva</a></li>
 
-      <li class="nav-item active"style = 'margin-right: 80px'><a class="text-white" href="#">Comentarios</a></li>
+      <li class="nav-item active"style = 'margin-right: 80px'><a class="text-white" href="<%= posts_path %>">Comentarios</a></li>
       <li class="nav-item active"style = 'margin-right: 80px'><a class="text-white" href="<%= new_contact_path %>">Contacto</a></li>
       <li class="nav-item active"style = 'margin-right: 80px'><a href="<%= destroy_user_session_path %>" data-method="DELETE">Salir</a></li>
       <li class="nav-item active"style = 'margin-right: 80px'><a class="text-white"><%= current_user.email %></a></li>
       <% else %>
-      <li class="nav-item active" style = 'margin-right: 80px'> <a class="text-white" href="">Bienvenido </a></li>
       <li class="nav-item active" style = 'margin-right: 80px'><a class="text-white" href="<%= home_index_path %>">Inicio</a></li>
       <li class="nav-item active" style = 'margin-right: 80px'><a class="text-white" href="#">Menú</a></li>
       <li class="nav-item active" style = 'margin-right: 80px'><a class="text-white" href="<%= new_user_session_path %>">Reserva</a></li>
 
-      <li class="nav-item active" style = 'margin-right: 80px'><a class="text-white" href="#">Comentarios</a></li>
+      <li class="nav-item active" style = 'margin-right: 80px'><a class="text-white" href="<%= posts_path %>">Comentarios</a></li>
       <li class="nav-item active" style = 'margin-right: 80px'><a class="text-white" href="<%= new_contact_path %>">Contacto</a></li>
       <li class="nav-item" style = 'margin-right: 80px'><a class="text-white" href="<%= new_user_session_path %>" >Ingreso</a></li>
       <li class="nav-item" style = 'margin-right: 80px'><a class="text-white" href="<%= new_user_registration_path %>">Registro</a></li>
