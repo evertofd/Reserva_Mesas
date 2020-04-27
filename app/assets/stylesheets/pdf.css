@@ -1,0 +1,20 @@
+body {
+  background-image: url('<%= wicked_pdf_image_tag 'piedra2.jpg' %>');
+  background-repeat: no-repeat;
+   background-position: absolute;
+   background-size: cover;
+   padding-bottom: 40rem;
+}
+
+.img-pequeña{
+  width: 70px;
+  height: 70px;
+  border-radius: 200px 200px 200px 200px;
+  -moz-border-radius: 200px 200px 200px 200px;
+  -webkit-border-radius: 200px 200px 200px 200px;
+  border: 2px solid #000000;
+  margin-bottom: 10px;
+  margin-left: 90px;
+  margin-right: 0;
+  margin-top: 10px;
+}

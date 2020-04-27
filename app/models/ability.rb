@@ -8,8 +8,9 @@ class Ability
     #
        user ||= User.new # guest user (not logged in)
       if user.admin?
-         can :manage, :all 
+         can :manage, :all
        else
+         can :create, Contact
          can :read, :all
          can :create, Reservation
          can :update, Reservation, user_id: user.id

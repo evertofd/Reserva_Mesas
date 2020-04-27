@@ -1,0 +1,128 @@
+<%= form_with(model: contact, local: true) do |form| %>
+<% if contact.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+  <ul>
+    <% contact.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+
+!--Section: Contact v.2-->
+<section class="mb-4 text-white">
+  <div class="container">
+
+
+
+    <!--Section heading-->
+    <h2 class="h1-responsive font-weight-bold text-center my-4">Contactanos</h2>
+    <!--Section description-->
+    <p class="text-center w-responsive mx-auto mb-5">¿Tiene usted alguna pregunta? Por favor no dude en contactarnos directamente. Nuestro equipo devolverá a usted la respuesta en cuestión de horas.
+      .</p>
+
+      <div class="row">
+
+        <!--Grid column-->
+        <div class="col-md-9 mb-md-0 mb-5">
+          <form id="contact-form" name="contact-form" >
+
+            <!--Grid row-->
+            <div class="row">
+
+              <!--Grid column-->
+              <div class="col-md-6">
+                <div class="md-form mb-0">
+                  <%= form.text_field :email, id: :contact_email, class: "form-control" %>
+                  <label for="name" class="">Nombre</label>
+                </div>
+              </div>
+              <!--Grid column-->
+
+              <!--Grid column-->
+              <div class="col-md-6">
+                <div class="md-form mb-0">
+                  <%= form.text_field :email, id: :contact_email, class: "form-control" %>
+                  <label for="email" class="">Su Email</label>
+                </div>
+              </div>
+              <!--Grid column-->
+
+            </div>
+            <!--Grid row-->
+
+            <!--Grid row-->
+            <div class="row">
+              <div class="col-md-12">
+                <div class="md-form mb-0">
+                  <%= form.text_field :title, id: :contact_title, class: "form-control" %>
+                  <label for="subject" class="">Asunto</label>
+                </div>
+              </div>
+            </div>
+            <!--Grid row-->
+
+            <!--Grid row-->
+            <div class="row">
+
+              <!--Grid column-->
+              <div class="col-md-12">
+
+                <div class="md-form">
+                  <%= form.text_area :body, id: :contact_body, class: "form-control md-textarea" %>
+
+                  <label for="message">Comentario</label>
+                </div>
+
+              </div>
+            </div>
+            <!--Grid row-->
+
+          </form>
+
+          <div class="text-center text-md-left">
+            <%= form.submit 'Enviar', class: 'btn btn-primary btn-block py-2 font-weight-bold' %>
+          </div>
+          <div class="status"></div>
+          <% end %>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-3 text-center">
+          <ul class="list-unstyled mb-0">
+            <li><i class="fas fa-map-marker-alt fa-2x"></i>
+              <p>Av. Alcalde Fernando Castillo Velasco 8751, Local 19 – 20, La Reina, Región Metropolitana</p>
+            </li>
+
+            <li><i class="fas fa-phone mt-4 fa-2x"></i>
+              <p>(2) 2845 7915</p>
+            </li>
+
+            <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+              <p>campeche.gastrobar@gmail.com</p>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+
+      </div>
+    </div>
+  </section>
+  <!--Section: Contact v.2-->
+
+  <section>
+    <h1 class="h1-responsive font-weight-bold text-center my-4 text-white">Ubicación</h1>
+
+    <div id="map" class="map container">
+
+      <%= map(:center => {
+        :latlng => [-33.4523189,-70.5411444],
+        :zoom => 18
+      })  %>
+    </div>
+
+  </section>

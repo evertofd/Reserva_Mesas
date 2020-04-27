@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+
+  <%= wicked_pdf_stylesheet_link_tag 'pdf' %>
+  <script src="https://use.fontawesome.com/e48058af53.js"></script>
+  <link href="//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <h1 class="text-center" style= "font-family: 'Montserrat', sans-serif; font-size: '50px'"> <%= wicked_pdf_image_tag 'logo.png', class: 'img-pequeña' %>  COMPROBANTE DE RESERVA</h1>
+      </div>
+      <div class="col-md-6 col-sm-12 align-items-center">
+        <li class="timeline-item bg-white rounded ml-3 p-4 shadow">
+          <h2 class="text-small text-center mt-2 font-weight-light" style= "font-family: 'Montserrat', sans-serif; font-size: '30px'"><i class="fas fa-user-friends"></i>Nombre:</h2>
+          <h3 class="text-small text-center mt-2 font-weight-light" style= "font-family: 'Montserrat', sans-serif; font-size: '30px'"><%= current_user.reservations.last.user.email%></h3>
+          <br>
+          <h2 class="text-small text-center mt-2 font-weight-light" style= "font-family: 'Montserrat', sans-serif; font-size: '30px'"><i class="far fa-clock"></i>Dia y Hora:</h2>
+          <h3 class="text-small text-center mt-2 font-weight-light" style= "font-family: 'Montserrat', sans-serif; font-size: '30px'"><%= current_user.reservations.last.start_date%></h3>
+          <br>
+          <h2 class="text-small text-center mt-2 font-weight-light" style= "font-family: 'Montserrat', sans-serif; font-size: '30px'"><i class="fas fa-users"></i>Cantidad de Personas: </h2>
+          <h3 class="text-small text-center mt-2 font-weight-light" style= "font-family: 'Montserrat', sans-serif; font-size: '30px'"><%= current_user.reservations.last.quantity%></h3>
+          <br>
+          <h2 class="text-small text-center mt-2 font-weight-light" style= "font-family: 'Montserrat', sans-serif; font-size: '30px'"><i class="fas fa-phone-square-alt"></i>Telefono: </h2>
+          <h3 class="text-small text-center mt-2 font-weight-light" style= "font-family: 'Montserrat', sans-serif; font-size: '30px'"><%= current_user.reservations.last.telephone%></h3>
+          <br>
+          <h2 class="text-small text-center mt-2 font-weight-light" style= "font-family: 'Montserrat', sans-serif; font-size: '30px'"><i class="fas fa-comments"></i>Comentarios: </h2>
+          <h3 class="text-small text-center mt-2 font-weight-light" style= "font-family: 'Montserrat', sans-serif; font-size: '30px'"><%= current_user.reservations.last.commentary%></h3>
+        </li>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

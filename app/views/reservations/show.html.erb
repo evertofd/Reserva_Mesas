@@ -1,33 +1,76 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Start date:</strong>
-  <%= @reservation.start_date %>
-</p>
-
-<p>
-  <strong>Quantity:</strong>
-  <%= @reservation.quantity %>
-</p>
-
-<p>
-  <strong>Telephone:</strong>
-  <%= @reservation.telephone %>
-</p>
-
-<p>
-  <strong>Commentary:</strong>
-  <%= @reservation.commentary %>
-</p>
-
-<%= link_to 'Edit', edit_reservation_path(@reservation) %> |
-<%= link_to 'Back', reservations_path %>
-
-<%= form_with(model: @reservation) do |form| %>
-<div class="actions">
-
-  <%= form.hidden_field :status, :value => "process"%>
-
-  <%= form.submit "Confimar" %>
-</div>
+<% if current_user.admin? %>
+<%= render 'layouts/barraAdmin'%>
 <%end%>
+<div class="container py-5">
+
+  <!-- For demo purpose -->
+  <div class="row text-center text-white mb-5">
+    <div class="col-lg-8 mx-auto">
+      <h1 class="display-4">RESERVA EN CAMPECHE</h1>
+      <p class="lead mb-0"></p>
+
+    </div>
+  </div><!-- End -->
+
+
+  <div class="row">
+    <div class="col-lg-7 mx-auto">
+
+      <!-- Timeline -->
+      <ul class="timeline">
+        <li class="timeline-item bg-white rounded ml-3 p-4 shadow">
+          <div class="timeline-arrow"></div>
+          <h2 class="h5 mb-0"><i class="fas fa-map-marked-alt"></i>UBICACION</h2>
+          <p class="text-small mt-2 font-weight-light">Restaurante: Campeche </p>
+          <p class="text-small mt-2 font-weight-light">Dirección: Patio La Reina, Av. Alcalde Fernando Castillo Velasco 8751, Local 19 - 20, La Reina, Santiago</p>
+        </li>
+        <li class="timeline-item bg-white rounded ml-3 p-4 shadow">
+          <div class="timeline-arrow"></div>
+          <h2 class="h5 mb-0" > <i class="fas fa-user-friends"></i>NOMBRE Y CONTACTO </h2>
+          <p class="text-small mt-2 font-weight-light"> Nombre: <%= @reservation.user.email %></p>
+          <p class="text-small mt-2 font-weight-light"> Email: <%= @reservation.user.email %></p>
+          <p class="text-small mt-2 font-weight-light"> Telefono: <%= @reservation.telephone %></p>
+          <p class="text-small mt-2 font-weight-light"> Cantidad de Personas: <%= @reservation.quantity %></p
+          </li>
+          <li class="timeline-item bg-white rounded ml-3 p-4 shadow">
+            <div class="timeline-arrow"></div>
+            <h2 class="h5 mb-0"><i class="far fa-clock"></i>DIA Y HORA </h2>
+            <p class="text-small mt-2 font-weight-light">  <%= @reservation.start_date %></p>
+          </li>
+
+          <li class="timeline-item bg-white rounded ml-3 p-4 shadow">
+            <div class="timeline-arrow"></div>
+            <h2 class="h5 mb-0"><i class="fas fa-comments"></i>COMENTARIOS</h2>
+            <p class="text-small mt-2 font-weight-light">   <%= @reservation.commentary %></p>
+          </li>
+          <li class="timeline-item bg-white rounded ml-3 p-4 shadow">
+            <div class="timeline-arrow"></div>
+
+
+
+
+            <div class="actions">
+
+
+              <%# <%= link_to 'Volver', reservations_path,  class: 'btn btn-warning text-white' %>
+              <%= form_with(model: @reservation) do |form| %>
+              <%= form.hidden_field :status, :value => "process"%>
+              <%= link_to 'Editar', edit_reservation_path(@reservation) ,class: 'btn btn-warning text-white'%>
+              <%= link_to 'Cancelar', @reservation, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger text-white' %>
+
+              <a type="button" data-toggle="modal" data-target="#exampleModal"><%= form.submit "Confimar", class: "btn btn-primary"%></a>
+
+              <%end%>
+
+              <%= render 'modalconfirmar' %>
+
+            </div>
+
+
+          </li>
+        </ul><!-- End -->
+
+      </div>
+    </div>
+  </div>

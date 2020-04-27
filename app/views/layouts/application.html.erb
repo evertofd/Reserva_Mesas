@@ -7,30 +7,19 @@
   <!-- fontawesome CDN -->
   <script src="https://use.fontawesome.com/e48058af53.js"></script>
   <link href="//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-  <!--Bootswatch CDN-->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-  <%# <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%# <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-
 </head>
-
-<body style = " margin-top: 0px; margin-right: 0px; margin-left: 0px; margin-bottom: 0px;">
-
+<body style = " margin-top: 0px; margin-right: 0px; margin-left: 0px; margin-bottom: 0px; padding-bottom: 0px;">
   <div class="flash">
     <%= render 'layouts/alert' %>
   </div>
-
   <%= render 'layouts/navbar' %>
-
-  
-
-
   <%= yield %>
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+<%= render 'layouts/footer' %>
 </body>
 </html>

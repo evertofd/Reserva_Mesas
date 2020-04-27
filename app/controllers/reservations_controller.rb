@@ -1,12 +1,18 @@
 class ReservationsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_reservation, only: [:show, :edit, :update, :destroy]
-   load_and_authorize_resource
-   skip_authorization_check
+  load_and_authorize_resource
+  skip_authorization_check
   # GET /reservations
   # GET /reservations.json
   def index
-    @reservations = Reservation.where(status: 'process')
+      @reservations = Reservation.all
+    # @reservations = Reservation.where(status: 'process')
+    respond_to do |format|
+         format.html
+         format.pdf { render template: 'reservations/comprobante', pdf: 'comprobante'}
+       end
+
   end
 
   def bookings
@@ -65,33 +71,33 @@ class ReservationsController < ApplicationController
 
     tables_availables = @reservation.tables
 
-     if params[:reservation][:status] == 'process'
+    if params[:reservation][:status] == 'process'
 
-       tables_availables.each do |table_available|
-         table_available.available = 0
-         table_available.save
-       end
-     else
+      tables_availables.each do |table_available|
+        table_available.available = 0
+        table_available.save
+      end
+    else
 
-       tables_availables.each do |table_available|
-         table_available.available = 1
-         table_available.save
-       end
-    respond_to do |format|
+      tables_availables.each do |table_available|
+        table_available.available = 1
+        table_available.save
+      end
+      respond_to do |format|
 
-      if @reservation.update(reservation_params)
-        flash.now[:notice] = "La reserva a nombre #{@reservation.title} fue actualizada correctamente"
-        format.html { redirect_to @reservation }
-        format.json { render :show, status: :ok, location: @reservation }
-        format.js
-      else
-        format.html { render :edit }
-        format.json { render json: @reservation.errors, status: :unprocessable_entity }
-        format.js
+        if @reservation.update(reservation_params)
+          flash.now[:notice] = "La reserva a nombre #{@reservation.title} fue actualizada correctamente"
+          format.html { redirect_to @reservation }
+          format.json { render :show, status: :ok, location: @reservation }
+          format.js
+        else
+          format.html { render :edit }
+          format.json { render json: @reservation.errors, status: :unprocessable_entity }
+          format.js
+        end
       end
     end
   end
-end
 
 
   # DELETE /reservations/1

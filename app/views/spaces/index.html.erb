@@ -1,4 +1,6 @@
-
+<% if current_user.admin? %>
+<%= render 'layouts/barraAdmin'%>
+<%end%>
 <section class="salon ">
   <div class="container centro  ">
     <div class="row ">
