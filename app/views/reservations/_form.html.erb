@@ -14,10 +14,12 @@
 
 <input type="hidden" name="location" value="<%= @space.slug %>">
 
+<div class="container">
+
 
 <div class="field">
   <%= form.label :start_date %>
-  <div class="content-datetimepicker" style="position: relative">
+  <div class="content-datetimepicker" style="position: relative; with: 30px;">
     <%= form.text_field :start_date, id: :reservation_start_date %>
   </div>
 </div>
@@ -62,3 +64,4 @@
   <%= form.submit %>
 </div>
 <% end %>
+</div>

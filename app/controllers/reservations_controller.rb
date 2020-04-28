@@ -6,10 +6,11 @@ class ReservationsController < ApplicationController
   # GET /reservations
   # GET /reservations.json
   def index
-      @reservations = Reservation.all
-    # @reservations = Reservation.where(status: 'process')
+      #@reservations = Reservation.all
+    @reservations = Reservation.where(status: 'process')
     respond_to do |format|
          format.html
+         format.json
          format.pdf { render template: 'reservations/comprobante', pdf: 'comprobante'}
        end
 
@@ -72,7 +73,8 @@ class ReservationsController < ApplicationController
     tables_availables = @reservation.tables
 
     if params[:reservation][:status] == 'process'
-
+      @reservation.status = params[:reservation][:status]
+      @reservation.save!
       tables_availables.each do |table_available|
         table_available.available = 0
         table_available.save

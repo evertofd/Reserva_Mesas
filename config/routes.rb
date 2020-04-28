@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
 
-  resources :posts do
-		resources :comments, only: [:create, :destroy]
-	end
-  
+  resources :posts
+
   resources :contacts
   #get 'home/index'
 
@@ -26,6 +24,7 @@ Rails.application.routes.draw do
   resources :tables
   #get 'spaces/index'
   resources :home, only: :index
+  resources :menu, only: :index
 
   resources :spaces, only: :index
   root to: 'home#index'

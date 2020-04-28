@@ -1,12 +1,14 @@
 
 <p id="notice"><%= notice %></p>
 <h2 class="h1-responsive font-weight-bold text-center my-4 text-white">Comentarios</h2>
+<% if user_signed_in? && current_user.admin? %>
 <p class="text-center text-white"><%= link_to 'Crear un Comentario', new_post_path,class: 'btn btn-sm btn-success text-white'%></p>
+<% end %>
 <div class="row py-5 mt-4 align-items-center">
   <!-- For Demo Purpose -->
   <div class="col-md-3 pr-lg-4 mb-5 mb-md-0">
     <img src='<%= asset_path "comentarios.png" %>' class="img-fluid mb-3 d-none d-md-block" style="margin-left: 80px;">
-    <p class="font-italic text-white mb-0 "  style="margin-left: 150px;">Cuentanos sobre tu experiencia!.</p>
+    <p class="font-italic text-white mb-0 "  style="margin-left: 150px;">Ingresa con tu usuario y cuentanos sobre tu experiencia!.</p>
   </div>
 
 
@@ -32,7 +34,7 @@
               <p class="font-italic text-muted">		<%= post.content %></p>
             </div>
 
-            <% if current_user.admin? %>
+            <% if user_signed_in? && current_user.admin? %>
             <%= link_to 'Editar', edit_post_path(post), class: 'btn btn-sm btn-success' %>
             <%= link_to 'Eliminar', post, method: :delete, data: { confirm: 'Estás seguro que deseas eliminar el Post?' }, class: 'btn btn-sm btn-danger' %>
             <% end %>

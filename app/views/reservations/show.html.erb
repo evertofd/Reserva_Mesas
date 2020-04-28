@@ -59,7 +59,7 @@
               <%= link_to 'Editar', edit_reservation_path(@reservation) ,class: 'btn btn-warning text-white'%>
               <%= link_to 'Cancelar', @reservation, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger text-white' %>
 
-              <a type="button" data-toggle="modal" data-target="#exampleModal"><%= form.submit "Confimar", class: "btn btn-primary"%></a>
+              <%= form.submit "Confimar", class: "btn btn-primary", data: {target: "#exampleModal", toggle: "modal"} %>
 
               <%end%>
 
