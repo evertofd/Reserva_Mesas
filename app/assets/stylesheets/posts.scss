@@ -113,3 +113,32 @@ CSS
   justify-content: center;
   min-height: 100vh;
 }
+
+
+//===========================================0
+// estrellas
+//============================================
+
+.form label {
+  font-size: 50px;
+}
+
+
+
+label {
+  color: grey;
+}
+
+.clasificacion {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+label:hover,
+label:hover ~ label {
+  color: #54B42A;
+}
+
+input[type="radio"]:checked ~ label {
+  color: #54B42A;
+}

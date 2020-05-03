@@ -11,7 +11,6 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require turbolinks
 //= require jquery/dist/jquery
 //= require tether/dist/js/tether
 //= require bootstrap/dist/js/bootstrap
@@ -22,4 +21,5 @@
 //= require fullcalendar/dist/fullcalendar
 //= require leaflet-google
 //= require leaflet
+//= require turbolinks
 //= require_tree .

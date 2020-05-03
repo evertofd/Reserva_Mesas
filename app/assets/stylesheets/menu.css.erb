@@ -1,31 +1,49 @@
 .comer{
-  background-image: url('<%= asset_path "comer.jpg" %>');
+  background-image: url('<%= asset_path "menu.png" %>');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 50%;
+  background-size: 40%;
   padding-bottom: 50rem;
-
 }
+
+@media only screen and (max-width: 950px) {
+  .comer{
+    background-image: url('<%= asset_path "piedra2.png" %>');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 60%;
+    padding-bottom: 50rem;
+
+  }
+  .izquierda{
+    position: absolute;
+    top: 80%;
+    text-align: center;
+  }
+
+  .derecha{
+    position: absolute;
+    top: 90%;
+    text-align: center;
+  }
+}
+
 
 .izquierda{
   position: absolute;
-  top: 80%;
-  margin-top: -75px;
-  margin-left: 0;
-  text-transform: uppercase:
+  top: 25%;
+  text-align: center;
 }
 
 .derecha{
   position: absolute;
-  top: 50%;
-  left: 75%;
-  margin-top: -75px;
-  margin-left: 0;
-  text-transform: uppercase:
+  top: 35%;
+
 }
 
-h1{
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
-  font-size: 50px;
+
+
+.comidas{
+  margin-top: 50px;
+
 }

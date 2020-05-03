@@ -21,6 +21,8 @@ document.addEventListener("turbolinks:load", function(){
 
   if($('#reservation_start_date').length){
     $('#reservation_start_date').datetimepicker({
+      minDate: new Date,
+    daysOfWeekDisabled: [0],
       inline: true,
       sideBySide: true,
       keepOpen: true,

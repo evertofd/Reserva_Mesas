@@ -14,9 +14,12 @@ Rails.application.routes.draw do
   get 'reservations/:type/new' => 'reservations#new', as: 'new_reservation'
   get 'reservations/bookings', to: 'reservations#bookings'
   get 'access/dashboard', to: 'access#dashboard'
+  get 'menu/bebidas', to: 'menu#bebidas'
+  get 'menu/comida', to: 'menu#comida'
   patch 'access/:id', to: 'access#type_rol', as: 'type_rol'
   delete 'access/:id', to: 'access#destroy', as: 'destroy_user'
 
+  
   resources :reservations do
     collection do
     end

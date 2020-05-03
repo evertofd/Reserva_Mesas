@@ -6,6 +6,8 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+    # @startotal = Post.average(:star).to_f
+    @startotal = 0.5
   end
 
   def user
@@ -15,7 +17,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-  
+
   end
 
   # GET /posts/new
@@ -32,7 +34,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user = current_user
-
+byebug
     respond_to do |format|
       if @post.save
         format.html { redirect_to posts_path, notice: 'Post was successfully created.' }
@@ -76,6 +78,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :content, :user_id)
+      params.require(:post).permit(:title, :content, :user_id, :star)
     end
 end

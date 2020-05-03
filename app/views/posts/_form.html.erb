@@ -1,41 +1,67 @@
 
-<div class=" container" style="margin-left: 25rem;">
+<div class=" container text-center">
 
-<%= form_with(model: post, local: true) do |form| %>
+  <%= form_with(model: post, local: true) do |form| %>
   <% if post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+  <div id="error_explanation">
+    <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-      <ul>
+    <ul>
       <% post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <li><%= message %></li>
       <% end %>
-      </ul>
-    </div>
+    </ul>
+  </div>
   <% end %>
 
-
+  <% stars = {'cinco' => 5, 'cuatro' => 4, 'tres' => 3, 'dos' => 2,'uno' => 1  } %>
   <fieldset>
 
-  <div class="form-group text-center">
-    <div class="col-lg-9">
-      <%= form.text_field :title, autofocus: true, class: 'form-control', placeholder: 'Asunto del comentario' %>
+    <div class="form-group ">
+      <div class="col-m-12">
+        <%= form.text_field :title, autofocus: true, class: 'form-control', placeholder: 'Asunto del comentario' %>
+      </div>
     </div>
-  </div>
-  <div class="form-group text-center mx-auto d-flex my-4">
-    <div class="border-bottom w-100" style="margin-right: 17rem;"></div>
-  </div>
-  <div class="form-group">
-    <div class="col-lg-9">
-      <%= form.text_area :content, class: 'form-control', placeholder: 'Contenido del comentario' %>
+    <div class="form-group  mx-auto d-flex my-4">
+      <div class="border-bottom w-100"></div>
     </div>
-  </div>
-  <div class="form-group text-center" style="margin-right: 100px;">
-    <div class="col-lg-10 col-lg-offset-2">
-      <%= form.submit 'Confirmar', class: 'btn btn-primary' %>
-      <%= link_to 'Volver', posts_path, class: 'btn btn-warning' %>
+
+
+    <div class="form-group">
+      <div class="col-m-12">
+        <%= form.text_area :content, class: 'form-control', placeholder: 'Contenido del comentario' %>
+      </div>
     </div>
-  </div>
-</fieldset>
-<% end %>
+    <div class="form-group  mx-auto d-flex my-4">
+      <div class="border-bottom w-100"></div>
+    </div>
+
+
+
+    <!--radio_button-->
+
+
+    <div class="form clasificacion form-check-inline">
+
+      <% stars.each do |star| %>
+        <%= form.radio_button :star, star[1], :id => "star-" + star[1].to_s, class: "d-none" %>
+        <label for="star-<%= star[1] %>">★</label>
+      <%end%>
+    </div>
+
+
+
+
+    <div class="form-group  mx-auto d-flex my-4">
+      <div class="border-bottom w-100"></div>
+    </div>
+
+    <div class="form-group text-center" >
+      <div class="col-m-12">
+        <%= form.submit 'Confirmar', class: 'btn btn-primary' %>
+        <%= link_to 'Volver', posts_path, class: 'btn btn-warning' %>
+      </div>
+    </div>
+  </fieldset>
+  <% end %>
 </div>

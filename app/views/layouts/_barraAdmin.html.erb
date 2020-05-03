@@ -1,75 +1,21 @@
-<div class="vertical-nav  text-light" id="sidebar">
-<p class="text-light font-weight-bold text-uppercase px-3 small pb-4 mb-0">Administrador</p>
+<div class="vertical-nav text-light" id="sidebar">
+  <p class="text-light font-weight-bold text-uppercase px-3 small pb-4 mb-0">Administrador</p>
 
- <ul class="nav flex-column  mb-0">
-   <li class="nav-item">
-     <a href="<%= reservations_bookings_path %>" class="nav-link text-light font-weight-bold text-uppercase font-italic ">
-               <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
-               Reservas
-           </a>
-   </li>
+  <ul class="nav flex-column  mb-0">
+    <li class="nav-item"><a href="<%= reservations_bookings_path %>" class="nav-link text-light font-weight-bold text-uppercase font-italic "><i class="fa fa-th-large mr-3 text-primary fa-fw"></i>Reservas</a></li>
+    <li class="nav-item"><a href="<%= reservations_path %>" class="nav-link text-light font-weight-bold text-uppercase font-italic"><i class="fa fa-th-large mr-3 text-primary fa-fw"></i>Calendario</a></li>
+    <li class="nav-item"><a href="<%= tables_path %>" class="nav-link text-light font-weight-bold text-uppercase font-italic"><i class="fas fa-chair mr-3 text-primary fa-fw"></i>Mesas</a></li>
 
+    <li class="nav-item"><a href="<%= access_dashboard_path %>" class="nav-link text-light font-weight-bold text-uppercase font-italic "><i class="fa fa-address-card mr-3 text-primary fa-fw"></i>Usuarios</a></li>
+    <li class="nav-item"><a href="<%= posts_path %>" class="nav-link text-light font-weight-bold text-uppercase font-italic"><i class="fas fa-chalkboard-teacher mr-3 text-primary fa-fw"></i>Comentarios</a></li>
+  </ul>
 
-   <li class="nav-item">
-     <a href="<%= reservations_path %>" class="nav-link text-light font-weight-bold text-uppercase font-italic">
-      <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
-               Calendario
-           </a>
-   </li>
-   <li class="nav-item">
-     <a href="<%= tables_path %>" class="nav-link text-light font-weight-bold text-uppercase font-italic">
-               <i class="fas fa-chair mr-3 text-primary fa-fw"></i>
-               Mesas
-           </a>
-   </li>
-
-   <li class="nav-item">
-     <a href="<%= access_dashboard_path %>" class="nav-link text-light font-weight-bold text-uppercase font-italic ">
-        <i class="fa fa-address-card mr-3 text-primary fa-fw"></i>
-
-               Usuarios
-           </a>
-   </li>
-
-   <li class="nav-item">
-     <a href="<%= posts_path %>" class="nav-link text-light font-weight-bold text-uppercase font-italic">
-               <i class="fas fa-chalkboard-teacher mr-3 text-primary fa-fw"></i>
-               Comentarios
-
-           </a>
-   </li>
- </ul>
-
- <p class="text-gray text-light font-weight-bold text-uppercase px-3 small py-4 mb-0">Público</p>
-
- <ul class="nav flex-column  mb-0">
-   <li class="nav-item">
-     <a href="<%= home_index_path %>" class="nav-link text-light font-weight-bold text-uppercase font-italic">
-               <i class="fas fa-home mr-3 text-primary fa-fw"></i>
-               Home
-           </a>
-   </li>
-   <li class="nav-item">
-     <a href="<%= spaces_path %>" class="nav-link text-light font-weight-bold text-uppercase font-italic">
-               <i class="fas fa-align-justify mr-3 text-primary fa-fw"></i>
-               Reservar
-
-           </a>
-   </li>
-   <li class="nav-item">
-     <a href="#" class="nav-link text-light font-weight-bold text-uppercase font-italic">
-               <i class="fas fa-hamburger mr-3 text-primary fa-fw"></i>
-               Menú
-
-           </a>
-   </li>
-   <li class="nav-item">
-     <a href="<%= new_contact_path  %>" class="nav-link text-light font-weight-bold text-uppercase font-italic">
-               <i class="fas fa-address-book mr-3 text-primary fa-fw"></i>
-               Contacto
-
-           </a>
-   </li>
- </ul>
+  <p class="text-gray text-light font-weight-bold text-uppercase px-3 small py-4 mb-0">Público</p>
+  <ul class="nav flex-column  mb-0">
+    <li class="nav-item"><a href="<%= home_index_path %>" class="nav-link text-light font-weight-bold text-uppercase font-italic"><i class="fas fa-home mr-3 text-primary fa-fw"></i>Home </a></li>
+    <li class="nav-item"><a href="<%= spaces_path %>" class="nav-link text-light font-weight-bold text-uppercase font-italic"><i class="fas fa-align-justify mr-3 text-primary fa-fw"></i>     Reservar     </a></li>
+    <li class="nav-item"><a href="#" class="nav-link text-light font-weight-bold text-uppercase font-italic"><i class="fas fa-hamburger mr-3 text-primary fa-fw"></i> Menú</a></li>
+    <li class="nav-item"><a href="<%= new_contact_path  %>" class="nav-link text-light font-weight-bold text-uppercase font-italic"><i class="fas fa-address-book mr-3 text-primary fa-fw"></i>Contacto</a></li>
+  </ul>
 </div>
 <!-- End vertical navbar -->

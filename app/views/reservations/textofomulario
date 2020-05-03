@@ -1,0 +1,149 @@
+<%= form_with(model: reservation) do |form| %>
+
+<% if reservation.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(reservation.errors.count, "error") %> prohibited this reservation from being saved:</h2>
+
+  <ul>
+    <% reservation.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<input type="hidden" name="location" value="<%= @space.slug %>">
+
+<div class="container">
+
+
+<!-- <div class="field">
+  <%= form.label :start_date %>
+  <div class="content-datetimepicker" style="position: relative; with: 30px;">
+    <%= form.text_field :start_date, id: :reservation_start_date %>
+  </div>
+</div> -->
+
+<div class="field">
+  <%= form.label :quantity %>
+  <%= form.number_field :quantity, id: :reservation_quantity %>
+</div>
+
+<div class="field">
+  <%= form.label :telephone %>
+  <%= form.text_field :telephone, id: :reservation_telephone %>
+</div>
+
+<div class="field">
+  <%= form.label :commentary %>
+  <%= form.text_area :commentary, id: :reservation_commentary %>
+</div>
+
+  <% if current_user.admin? %>
+<div class="field">
+
+  <% if @reservation.status == 'created' %>
+
+  <%= form.radio_button :status, "created", checked: true %> Creada <br>
+  <%= form.radio_button :status, "process" %> proceso <br>
+  <%= form.radio_button :status, "finished" %> Finalizada
+
+  <%elsif @reservation.status == 'process'   %>
+  <%= form.radio_button :status, "created" %> Creada <br>
+  <%= form.radio_button :status, "process", checked: true %> proceso <br>
+  <%= form.radio_button :status, "finished" %> Finalizada
+
+  <% elsif @reservation.status == 'finished' %>
+  <%= form.radio_button :status, "created" %> Creada <br>
+  <%= form.radio_button :status, "process" %> proceso <br>
+  <%= form.radio_button :status, "finished", checked: true %> Finalizada
+  <%end%>
+</div>
+  <%end%>
+<div class="actions">
+  <%= form.submit %>
+</div>
+<% end %>
+</div>
+
+--------------------------------------------------------------
+
+
+      <%elsif @post.starstatus == 'dos'   %>
+      <%= form.radio_button :starstatus, "cinco", type:'radio', name:'estrellas', value:"dos"%><label for="radio1">★</label>
+      <%= form.radio_button :starstatus, "cuatro", type:'radio', name:'estrellas', value:"tres"%><label for="radio2">★</label>
+      <%= form.radio_button :starstatus, "tres", type:'radio', name:'estrellas', value:"uno" %><label for="radio3">★</label>
+      <%= form.radio_button :starstatus, "dos",checked: true, type:'radio', name:'estrellas', value:"dos"%><label for="radio4">★</label>
+      <%= form.radio_button :starstatus, "uno",   type:'radio', name:'estrellas', value:"tres"%><label for="radio5">★</label>
+
+      <%elsif @post.starstatus == 'tres'   %>
+      <%= form.radio_button :starstatus, "cinco", type:'radio', name:'estrellas', value:"dos"%><label for="radio1">★</label>
+      <%= form.radio_button :starstatus, "cuatro", type:'radio', name:'estrellas', value:"tres"%><label for="radio2">★</label>
+      <%= form.radio_button :starstatus, "tres",checked: true, type:'radio', name:'estrellas', value:"uno" %><label for="radio3">★</label>
+      <%= form.radio_button :starstatus, "dos", type:'radio', name:'estrellas', value:"dos"%><label for="radio4">★</label>
+      <%= form.radio_button :starstatus, "uno",   type:'radio', name:'estrellas', value:"tres"%><label for="radio5">★</label>
+
+      <%elsif @post.starstatus == 'cuatro'   %>
+      <%= form.radio_button :starstatus, "cinco", type:'radio', name:'estrellas', value:"dos"%><label for="radio1">★</label>
+      <%= form.radio_button :starstatus, "cuatro",checked: true, type:'radio', name:'estrellas', value:"tres"%><label for="radio2">★</label>
+      <%= form.radio_button :starstatus, "tres", type:'radio', name:'estrellas', value:"uno" %><label for="radio3">★</label>
+      <%= form.radio_button :starstatus, "dos", type:'radio', name:'estrellas', value:"dos"%><label for="radio4">★</label>
+      <%= form.radio_button :starstatus, "uno",   type:'radio', name:'estrellas', value:"tres"%><label for="radio5">★</label>
+
+      <%elsif @post.starstatus == 'cinco'   %>
+      <%= form.radio_button :starstatus, "cinco", checked: true, type:'radio', name:'estrellas', value:"dos"%><label for="radio1">★</label>
+      <%= form.radio_button :starstatus, "cuatro", type:'radio', name:'estrellas', value:"tres"%><label for="radio2">★</label>
+      <%= form.radio_button :starstatus, "tres", type:'radio', name:'estrellas', value:"uno" %><label for="radio3">★</label>
+      <%= form.radio_button :starstatus, "dos", type:'radio', name:'estrellas', value:"dos"%><label for="radio4">★</label>
+      <%= form.radio_button :starstatus, "uno",   type:'radio', name:'estrellas', value:"tres"%><label for="radio5">★</label>
+
+  <%end%>
+
+------------------------------------------------------------------------------------------------------
+
+<--  <%if @startotal >= 4.5 %>
+  <input  type="radio" checked><label >★</label>
+  <input  type="radio" disabled><label>★</label>
+  <input type="radio" disabled><label>★</label>
+  <input type="radio" disabled><label>★</label>
+  <input type="radio" disabled><label >★</label>
+  <% elsif @startotal >= 3.5 %>
+  <input type="radio" disabled><label>★</label>
+  <input type="radio" checked><label>★</label>
+  <input type="radio" disabled><label>★</label>
+  <input type="radio" disabled><label>★</label>
+  <input type="radio" disabled><label >★</label>
+  <% elsif @startotal >=2.5 %>
+  <input type="radio" disabled><label>★</label>
+  <input type="radio" disabled><label>★</label>
+  <input type="radio" checked><label>★</label>
+  <input type="radio" disabled><label>★</label>
+  <input type="radio" disabled><label >★</label>
+  <% elsif @startotal >= 1.5 %>
+  <input type="radio" disabled><label>★</label>
+  <input type="radio" disabled><label>★</label>
+  <input type="radio" disabled><label>★</label>
+  <input type="radio" checked><label>★</label>
+  <input type="radio" disabled><label >★</label>
+  <% elsif @startotal >= 0.5 %>
+  <input type="radio" disabled><label>★</label>
+  <input type="radio" disabled><label>★</label>
+  <input type="radio" disabled><label>★</label>
+  <input type="radio" disabled><label>★</label>
+  <input type="radio" checked><label >★</label>
+  <%end%>-->
+
+
+  <%if user_signed_in? && current_user.admin? %>
+  <li class="nav-item active text-white letra" id="sidebarCollapse" type="button"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Tablero Administrador|</small></li>
+  <li class="nav-item"><a class=" nav-link text-white letra" href="<%= destroy_user_session_path %>" data-method="DELETE"><i class="fas fa-users-cog mr-2"></i>Salir|</a></li>
+  <li class="nav-item"><a class=" nav-link text-white letra"><i class="fas fa-users-cog mr-2"></i><%= current_user.email %></a></li>
+  <% elsif user_signed_in? %>
+  <li class="nav-item active"><a class=" nav-link text-white letra" href="<%= home_index_path %>">Inicio|</a></li>
+  <li class="nav-item"><a class=" nav-link text-white letra" href="<%= menu_index_path %>">Menú|</a></li>
+  <li class="nav-item"><a class=" nav-link text-white letra" href="<%= spaces_path %>">Reserva|</a></li>
+  <li class="nav-item"><a class=" nav-link text-white letra" href="<%= posts_path %>">Comentarios|</a></li>
+  <li class="nav-item"><a class=" nav-link text-white letra" href="<%= new_contact_path %>">Contacto|</a></li>
+  <li class="nav-item"><a href="<%= destroy_user_session_path %>" data-method="DELETE">Salir|</a></li>
+  <li class="nav-item"><a class=" nav-link text-white letra"><%= current_user.email %></a></li>
+  <% else %>

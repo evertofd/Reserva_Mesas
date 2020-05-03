@@ -1,3 +1,5 @@
+
+
 <%= form_with(model: reservation) do |form| %>
 
 <% if reservation.errors.any? %>
@@ -14,54 +16,109 @@
 
 <input type="hidden" name="location" value="<%= @space.slug %>">
 
-<div class="container">
+<div class="container text-white">
+  <div class="row py-5 mt-4 align-items-center">
 
 
-<div class="field">
-  <%= form.label :start_date %>
-  <div class="content-datetimepicker" style="position: relative; with: 30px;">
-    <%= form.text_field :start_date, id: :reservation_start_date %>
+    <!-- Registeration Form -->
+    <div class="col-md-7 col-lg-6 ml-auto">
+      <form action="#">
+        <div class="row">
+
+
+          <!-- Email Address -->
+          <div class="input-group col-md-12 mb-4">
+            <div class="input-group-prepend">
+              <span class="input-group-text bg-white px-4 border-md border-right-0">
+                <i class="fas fa-calendar-week"></i>
+              </span>
+            </div>
+            <div >
+
+              <div class="content-datetimepicker" style="position: relative; with: 30px;">
+                <%= form.text_field :start_date, id: :reservation_start_date, autofocus: true, class:"form-control bg-white border-left-0 border-md" %>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- cantidad-->
+
+          <div class="input-group col-md-12 mb-4">
+            <div class="input-group-prepend">
+              <span class="input-group-text bg-white px-4 border-md border-right-0">
+                <i class="fas fa-users"></i>
+              </span>
+            </div>
+            <%= form.number_field :quantity, id: :reservation_quantity, autocomplete: "off", class: 'form-control', placeholder: 'Personas',  class: "form-control bg-white border-left-0 border-md" %>
+          </div>
+
+          <!-- telephone -->
+
+          <div class="input-group col-md-12 mb-4">
+            <div class="input-group-prepend">
+              <span class="input-group-text bg-white px-4 border-md border-right-0">
+                <i class="fas fa-phone-volume"></i>
+              </span>
+            </div>
+            <%= form.text_field :telephone, id: :reservation_telephone, autocomplete: "off", class: 'form-control', placeholder: 'Telefono',  class: "form-control bg-white border-left-0 border-md" %>
+          </div>
+
+          <!-- comentario -->
+
+          <div class="input-group col-md-12 mb-4">
+            <div class="input-group-prepend">
+              <span class="input-group-text bg-white px-4 border-md border-right-0">
+                <i class="fas fa-comments"></i>
+              </span>
+            </div>
+            <%= form.text_area :commentary, id: :reservation_commentary , autocomplete: "off", class: 'form-control', placeholder: 'Comentario',  class: "form-control bg-white border-left-0 border-md" %>
+          </div>
+
+
+          <div class="col-md-12 text-center">
+            <% if current_user.admin? %>
+            <div class="form-group form-check-inline">
+              <% if @reservation.status == 'created' %>
+
+              <%= form.radio_button :status, "created", checked: true %> Creada <br>
+              <%= form.radio_button :status, "process" %> proceso <br>
+              <%= form.radio_button :status, "finished" %> Finalizada
+
+              <%elsif @reservation.status == 'process'   %>
+              <%= form.radio_button :status, "created" %> Creada <br>
+              <%= form.radio_button :status, "process", checked: true %> proceso <br>
+              <%= form.radio_button :status, "finished" %> Finalizada
+
+              <% elsif @reservation.status == 'finished' %>
+              <%= form.radio_button :status, "created" %> Creada <br>
+              <%= form.radio_button :status, "process" %> proceso <br>
+              <%= form.radio_button :status, "finished", checked: true %> Finalizada
+              <%end%>
+            </div>
+
+
+
+            <%end%>
+          </div>
+          <!--radio_button-->
+
+
+          <!-- Submit Button -->
+
+
+          <div class="form-group col-md-12 mx-auto mb-0">
+            <span class="font-weight-bold" > <%= form.submit 'Continuar', class: 'btn btn-primary btn-block py-2 font-weight-bold' %></span>
+          </div>
+
+        </div>
+      </form>
+    </div>
+
+    <!-- For Demo Purpose -->
+    <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
+      <img src='<%= asset_path "calendario.png" %>' class="img-fluid mb-3 d-none d-md-block" style="margin-left: 100px;">
+    </div>
   </div>
 </div>
-
-<div class="field">
-  <%= form.label :quantity %>
-  <%= form.number_field :quantity, id: :reservation_quantity %>
-</div>
-
-<div class="field">
-  <%= form.label :telephone %>
-  <%= form.text_field :telephone, id: :reservation_telephone %>
-</div>
-
-<div class="field">
-  <%= form.label :commentary %>
-  <%= form.text_area :commentary, id: :reservation_commentary %>
-</div>
-
-  <% if current_user.admin? %>
-<div class="field">
-
-  <% if @reservation.status == 'created' %>
-
-  <%= form.radio_button :status, "created", checked: true %> Creada <br>
-  <%= form.radio_button :status, "process" %> proceso <br>
-  <%= form.radio_button :status, "finished" %> Finalizada
-
-  <%elsif @reservation.status == 'process'   %>
-  <%= form.radio_button :status, "created" %> Creada <br>
-  <%= form.radio_button :status, "process", checked: true %> proceso <br>
-  <%= form.radio_button :status, "finished" %> Finalizada
-
-  <% elsif @reservation.status == 'finished' %>
-  <%= form.radio_button :status, "created" %> Creada <br>
-  <%= form.radio_button :status, "process" %> proceso <br>
-  <%= form.radio_button :status, "finished", checked: true %> Finalizada
-  <%end%>
-</div>
-  <%end%>
-<div class="actions">
-  <%= form.submit %>
-</div>
 <% end %>
-</div>

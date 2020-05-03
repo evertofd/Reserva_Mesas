@@ -5,25 +5,42 @@
 * ==========================================
 *
 */
+
+
+.img-navbar{
+  width: 5rem;
+  border-radius: 200px 200px 200px 200px;
+  -moz-border-radius: 200px 200px 200px 200px;
+  -webkit-border-radius: 200px 200px 200px 200px;
+  border: 2px solid #000000;
+}
+
 .letra{
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-size: 20px;
 }
 .navbar {
-  /* background: rgba(0,0,0,0); */
   border-radius: 10px;
  height: 80px;
 padding-bottom: 40px;
 }
 
-.navbar-position{
+.colordark{
+  background: rgba(5,5,6);
+}
+
+.custom-toggler.navbar-toggler {
+  border-color: rgb(249, 249, 249);
+}
+
+/* .navbar-position{
 
     margin-left: 30rem;
 
         width: 800px;
 
-}
+} */
 
 .vertical-nav {
   min-width: 17rem;
@@ -31,10 +48,9 @@ padding-bottom: 40px;
   height: 100vh;
   position: absolute;
   top: 116px;
-  left: 0;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.4s;
-  margin-left: 300px;
+  margin-left: 30px;
 
 }
 
@@ -68,44 +84,7 @@ padding-bottom: 40px;
   }
 }
 
-/*
-*
-* ==========================================
-* FOR DEMO PURPOSE
-* ==========================================
-*
-*/
 
-body {
-  background-image: url('<%= asset_path "piedra2.jpg" %>');
-  background-repeat: no-repeat;
-  background-position: absolute;
-  background-size: cover;
-  padding-bottom: 40rem;
-
-}
-
-.separator {
-  margin: 3rem 0;
-  border-bottom: 1px dashed #fff;
-}
-
-.text-uppercase {
-  letter-spacing: 0.1em;
-}
-
-.text-gray {
-  color: #aaa;
-}
-
-
-/*
-*
-* ==========================================
-* Boton facebook
-* ==========================================
-*
-*/
 
 .border-md {
   border-width: 2px;
@@ -133,9 +112,11 @@ body {
   margin-top: 10px;
 }
 
-.footer{
-
+.img-logo1{
+  width: 9rem;
+text-align: center;
 }
+
 
 .footer-navega{
   width: 300px;
@@ -156,4 +137,14 @@ body {
     padding-left: 0px;
     padding-right: 0px;
 
+}
+
+.top{
+  padding-top: 0;
+  
+}
+@media only screen and (min-width: 900px){
+  .top{
+    margin-top: 40px;
+  }
 }
