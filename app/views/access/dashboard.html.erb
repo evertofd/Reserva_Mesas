@@ -4,13 +4,14 @@
 
   <p id="notice"><%= notice %></p>
 <div class="container text-center ">
-  <h1 class="text-white">Usuarios</h1>
+  <h2 class="text-white" style="margin-top: 80px;">Usuarios</h2>
+
 
   <table class="table table-striped table-hover text-white ">
     <thead>
       <tr>
         <th>USUARIO</th>
-        <th>ESTADO</th>
+        <th>Visita/Administrador</th>
         <th>OPCIONES</th>
         <th colspan="3"></th>
       </tr>
@@ -21,24 +22,18 @@
       <tr>
         <td><%= u.email %></td>
         <td><%= u.role %></td>
-        <td>
 
           <% if current_user.admin? %>
           <td>
             <%= link_to 'Cambiar Rol', type_rol_path(u), method: :patch, class: 'btn btn-primary' %>
             <%= link_to 'Eliminar User', destroy_user_path(u), method: :delete, class: 'btn btn-danger',data: { confirm: 'Estás seguro que deseas eliminar al usuario?' } %> </td>
 
-            <td></td>
+
             <% end %>
           </tr>
           <% end %>
         </tbody>
       </table>
 
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
 
 </div>

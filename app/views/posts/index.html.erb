@@ -4,12 +4,12 @@
 <% if user_signed_in?  %>
 <p class="text-center text-white"><%= link_to 'Crear un Comentario', new_post_path,class: 'btn btn-sm btn-success text-white'%></p>
 <% end %>
-<div class="row py-5 mt-4 align-items-center">
+<div class="row py-5 mt-4 align-items-center" style=" margin-left: 0px; margin-right: 0px;">
   <!-- For Demo Purpose -->
   <div class="col-md-6 text-center">
-    <h2 class=" font-weight-bold  text-uppercase text-letf my-4 text-white" style="margin-left: 50px;">calificaciones y opiniones</h2>
-    <h1 class=" font-weight-bold text-center my-4 text-white" style="margin-left: 50px;"><%= @startotal %></h1>
-    <div class="form clasificacion form-check-inline" style="margin-left: 80px;">
+    <h2 class=" font-italic text-white mb-0 text-center">Calificaciones y Opiniones</h2>
+    <h1 class=" font-weight-bold text-center my-4 text-white"><%= @startotal %></h1>
+    <div class="form clasificacion form-check-inline text-center" >
 
       <% n = 4 %>
       <% while n >= 0 do %>
@@ -28,7 +28,7 @@
     </div>
 
     <img src='<%= asset_path "comentario.png" %>' class="img-fluid mb-3 d-none d-md-block" style="margin-left: 80px;">
-    <h2 class="font-italic text-white mb-0 "  style="margin-left: 150px;">Ingresa con tu usuario y cuentanos sobre tu experiencia!.</h2>
+    <h2 class="font-italic text-white text-center">Ingresa y cuentanos sobre tu experiencia!</h2>
 
   </div>
 
@@ -36,7 +36,7 @@
   <div class="col-md-6 ">
     <div class="py-5">
       <div class="row">
-        <div class="col-lg-9 mx-auto">
+        <div class="col-md-10 col-xs-4 mx-auto">
 
           <% @posts.each do |post| %>
           <div class="card shadow mb-4">
@@ -52,7 +52,7 @@
                 </ol>
               </nav>
 
-              <p class="font-italic text-muted">		<%= post.content %></p>
+              <p class="font-italic text-dark">		<%= post.content %></p>
 
               <div class="col-m-6 ">
                 <div class="form clasificacion form-check-inline">

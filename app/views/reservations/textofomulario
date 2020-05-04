@@ -147,3 +147,17 @@
   <li class="nav-item"><a href="<%= destroy_user_session_path %>" data-method="DELETE">Salir|</a></li>
   <li class="nav-item"><a class=" nav-link text-white letra"><%= current_user.email %></a></li>
   <% else %>
+--------------------------------------------------------------------------------------------------------------------
+<section >
+  <div class="container  ">
+    <div class="row">
+        <% @spaces.each do |space| %>
+<div class="card" style="width: 18rem;">
+  <img  src="<%= asset_path 'salon.jpg' %>" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><%= space.name %></h5>
+    <%= link_to (image_tag 'Dedo.png', style:"width:50px"),  new_reservation_path(space.slug.parameterize) %>
+  </div>
+</div>
+<% end %>
+  </section>

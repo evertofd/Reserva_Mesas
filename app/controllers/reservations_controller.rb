@@ -6,7 +6,6 @@ class ReservationsController < ApplicationController
   # GET /reservations
   # GET /reservations.json
   def index
-      #@reservations = Reservation.all
     @reservations = Reservation.where(status: 'process')
     respond_to do |format|
          format.html
@@ -42,7 +41,6 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
     @reservation.user = current_user
     tables_available_total= Table.where(available: true).where(space_id: Space.where(slug: params[:location]).first.id).count
-    ######
     cantidad_mesas = ((@reservation.quantity - 2) / 2.to_f).ceil
     if tables_available_total >= 1 && @reservation.quantity <= 4
       tables_availables = Table.where(available: true).where(space_id: Space.where(slug: params[:location]).first.id).limit(1)

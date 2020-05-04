@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Campeche2</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <%= csrf_meta_tags %>
 
   <!-- fontawesome CDN -->
@@ -25,11 +26,14 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 <body style = " margin-top: 0px; margin-right: 0px; margin-left: 0px; margin-bottom: 0px; padding-bottom: 0px;">
+  
   <div class="flash">
     <%= render 'layouts/alert' %>
   </div>
+
   <%= render 'layouts/navbar' %>
   <%= yield %>
+
   <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
   <%= render 'layouts/footer' %>
 </body>

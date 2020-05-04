@@ -2,8 +2,10 @@
 <div class="container">
 
 <p id="notice"><%= notice %></p>
+<div class="col-md-12 col-sm-6">
 
-<h1 class="text-center text-white">CALENDARIO DE RESERVACIONES</h1>
+
+<h2 class="text-center text-white" style="margin-top: 80px;">CALENDARIO DE RESERVACIONES</h2>
 
     <% @reservations.each do |reservation| %>
 
@@ -18,10 +20,10 @@
       <!--  reservation.user.nil??"":reservation.user.email -->
       <!-- reservation.try(:user).try(:email) -->
     <% (reservation.user.nil?)?"-":reservation.try(:user).email %>
-    <% reservation.tables.first.space.name %>
-    <% link_to 'Show', reservation %>
-    <% link_to 'Edit', edit_reservation_path(reservation) %>
-    <% link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%# <% reservation.tables.first.space.name %> %>
+    <% link_to 'Detalle', reservation %>
+    <% link_to 'Editar', edit_reservation_path(reservation) %>
+    <% link_to 'Eliminar', reservation, method: :delete, data: { confirm: 'Are you sure?' } %>
 
     <% end %>
 
@@ -29,4 +31,5 @@
 <br>
 <div class="text-white text-uppercase" id='calendar' data-token="<%= form_authenticity_token %>"> </div>
 <%= render 'modal' %>
+</div>
 </div>

@@ -30,7 +30,7 @@ class ContactsController < ApplicationController
     respond_to do |format|
       if @contact.save
         ContacMailer.formulariocontacto(@contact).deliver
-        format.html { redirect_to @contact, notice: 'Contact was successfully created.' }
+        format.html { redirect_to new_contact_path, notice: 'Su consulta fue enviada.' }
         format.json { render :show, status: :created, location: @contact }
       else
         format.html { render :new }

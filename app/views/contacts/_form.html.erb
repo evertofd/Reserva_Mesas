@@ -13,13 +13,13 @@
 
 
 !--Section: Contact v.2-->
-<section class="mb-4 text-white">
-  <div class="container">
+<section class="mb-4 text-white" >
+  <div class="container"  style="margin-top: 80px;">
 
 
 
     <!--Section heading-->
-    <h2 class="h1-responsive font-weight-bold text-center my-4">Contactanos</h2>
+    <h2 class="h1-responsive text-uppercase font-weight-bold text-center my-4" >Contactanos</h2>
     <!--Section description-->
     <p class="text-center w-responsive mx-auto mb-5">¿Tiene usted alguna pregunta? Por favor no dude en contactarnos directamente. Nuestro equipo devolverá a usted la respuesta en cuestión de horas.
       .</p>
@@ -115,14 +115,17 @@
   <!--Section: Contact v.2-->
 
   <section>
-    <h1 class="h1-responsive font-weight-bold text-center my-4 text-white">Ubicación</h1>
+    <div class="col-md-12 d-none d-sm-none d-md-block">
+      <h2 class="h1-responsive text-uppercase font-weight-bold text-center my-4 text-white">Ubicación</h2>
 
-    <div id="map" class="map container">
+      <div id="map" class="map container text-center">
 
-      <%= map(:center => {
-        :latlng => [-33.4523189,-70.5411444],
-        :zoom => 18
-      })  %>
+        <%= map(:center => {
+          :latlng => [-33.4523189,-70.5411444],
+          :zoom => 18
+        })  %>
+      </div>
     </div>
+
 
   </section>

@@ -6,8 +6,8 @@
 
     <p id="notice"><%= notice %></p>
 
-    <h1 class="text-white">Mesas</h1>
-
+    <h2 class="text-white" style="margin-top: 80px;">Mesas</h2>
+<%= link_to 'NUEVA MESA', new_table_path, class: 'btn btn-warning text-white', style: "margin-bottom: 1rem;" %>
     <table class="table table-striped table-hover text-white ">
 
       <thead>
@@ -28,8 +28,8 @@
           <td><%= table.chair %></td>
           <td><%= table.available %></td>
           <td><%= table.space.slug %></td>
-          <td><%= link_to 'Edit', edit_table_path(table), class: 'btn btn-primary text-white' %></td>
-          <td><%= link_to 'Destroy', table, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger text-white' %></td>
+          <td><%= link_to 'Actualizar', edit_table_path(table), class: 'btn btn-primary text-white' %>
+          <%= link_to 'Eliminar', table, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger text-white' %></td>
         </tr>
         <% end %>
       </tbody>
@@ -37,7 +37,7 @@
 
     <br>
 
-    <%= link_to 'NUEVA MESA', new_table_path, class: 'btn btn-warning' %>
+
 
   </div>
 

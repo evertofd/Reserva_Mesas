@@ -1,32 +1,70 @@
+
+
+
 <%= form_with(model: table, local: true) do |form| %>
-  <% if table.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(table.errors.count, "error") %> prohibited this table from being saved:</h2>
+<% if table.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(table.errors.count, "error") %> prohibited this table from being saved:</h2>
 
-      <ul>
-      <% table.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :chair %>
-    <%= form.number_field :chair, id: :table_chair %>
-  </div>
-
-  <div class="field">
-    <%= form.label :available %>
-    <%= form.check_box :available, id: :table_available %>
-  </div>
-
-  <div class="field">
-    <%= form.label :space_id %>
-    <%= form.text_field :space_id, id: :table_space_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <ul>
+    <% table.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
 <% end %>
+
+<div class="container text-white">
+  <fieldset>
+
+    <div class="form-group text-center">
+      <div class="col-md-4 offset-md-4">
+        <%= form.label :table_number, 'NUMERO', class: 'text-white' %>
+        <%= form.text_field :table_number, id: :table_number, autofocus: false, class: 'form-control', placeholder: 'Numero' %>
+      </div>
+    </div>
+
+    <div class="form-group  mx-auto d-flex my-4">
+      <div class="border-bottom w-100"></div>
+    </div>
+
+    <div class="form-group text-center">
+      <div class="col-md-4 offset-md-4">
+        <%= form.label :chair, 'SILLAS', class: 'text-white text-center' %>
+        <%= form.number_field :chair, id: :table_chair, class: 'form-control', placeholder: 'Cantidad de sillas' %>
+      </div>
+    </div>
+
+    <div class="form-group  mx-auto d-flex my-4">
+      <div class="border-bottom w-100"></div>
+    </div>
+
+    <div class="form-group text-center">
+      <div class="col-md-4 offset-md-4">
+        <%= form.label :available, 'DISPONIBILIDAD', class: 'text-white' %>
+        <%= form.check_box :available, id: :table_available %>
+      </div>
+    </div>
+    <div class="form-group  mx-auto d-flex my-4">
+      <div class="border-bottom w-100"></div>
+    </div>
+
+    <div class="form-group text-center">
+      <div class="col-md-4 offset-md-4">
+        <%= form.label :space_id, 'ESPACIO', class: 'text-white' %>
+        <%= form.text_field :space_id, id: :table_space_id, class: 'form-control', placeholder: 'Ubicación' %>
+      </div>
+    </div>
+
+    <div class="form-group  mx-auto d-flex my-4">
+      <div class="border-bottom w-100"></div>
+    </div>
+
+    <div class="form-group text-center" >
+      <div class="col-m-2">
+        <%= form.submit 'Confirmar', class: 'btn btn-primary'%>
+      </div>
+    </div>
+  </fieldset>
+  <% end %>
+</div>

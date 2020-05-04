@@ -1,21 +1,32 @@
 <% if current_user.admin? %>
 <%= render 'layouts/barraAdmin'%>
 <%end%>
-<section class="salon ">
-  <div class="container centro  ">
-    <div class="row ">
+
+
+
+<section >
+  <div class="container">
+    <div class="row">
       <% @spaces.each do |space| %>
-      <div class="col text-center">
-        <div class="col-md-8 text-center ">
+      <div class="col align-self-start text-center">
+        <% if space.slug == "salon" %>
+        <img  class="w-100 mb-5 " style="margin-top: 10rem;"  src="<%= asset_path 'salon.jpg' %>">
+        <h1 class= " font-weight-bold text-white text-uppercase" ><%= space.name %></h1>
+        <%= link_to (image_tag 'Dedo.png', style:"width:50px"),  new_reservation_path(space.slug.parameterize) %>
+        <% else %>
 
-          <h1 class= " font-weight-bold text-white text-uppercase" ><%= space.name %></h1>
-          <%= link_to (image_tag 'Dedo.png', style:"width:50px"),  new_reservation_path(space.slug.parameterize) %>
-        </div>
+        <img  class="w-100 mb-5 " style="margin-top: 20rem;"  src="<%= asset_path 'terraza.jpg' %>">
+        <h1 class= " font-weight-bold text-white text-uppercase" ><%= space.name %></h1>
+        <%= link_to (image_tag 'Dedo.png', style:"width:50px"),  new_reservation_path(space.slug.parameterize) %>
+
+        <% end %>
       </div>
-
       <% end %>
-
-      <div class="w-100" style="margin-top:10px"> </div>
     </div>
+
   </div>
+
 </section>
+
+
+<!--Seccion de ubicacion -->

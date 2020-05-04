@@ -6,8 +6,8 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
-    # @startotal = Post.average(:star).to_f
-    @startotal = 0.5
+     @startotal = Post.average(:star).to_f
+
   end
 
   def user
@@ -34,7 +34,6 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user = current_user
-byebug
     respond_to do |format|
       if @post.save
         format.html { redirect_to posts_path, notice: 'Post was successfully created.' }
