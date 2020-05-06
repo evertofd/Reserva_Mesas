@@ -1,5 +1,5 @@
 .comer{
-  background-image: url('<%= asset_path "menu.png" %>');
+  background-image: url(<%= asset_path 'menu.png' %>);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 40%;
@@ -8,25 +8,26 @@
 
 @media only screen and (max-width: 950px) {
   .comer{
-    background-image: url('<%= asset_path "piedra2.png" %>');
+    background-image: url(<%= asset_path 'menu.png' %>);
     background-repeat: no-repeat;
-    background-position: center top;
-    background-size: 60%;
+    background-position: center;
+    background-size: 0%;
     padding-bottom: 50rem;
-
-  }
-  .izquierda{
-    position: absolute;
-    top: 80%;
-    text-align: center;
   }
 
-  .derecha{
-    position: absolute;
-    top: 100%;
-    text-align: center;
-  }
 }
+.izquierda{
+  position: absolute;
+  top: 80%;
+  text-align: center;
+}
+
+.derecha{
+  position: absolute;
+  top: 100%;
+  text-align: center;
+}
+
 
 @media only screen and (max-width: 950px) {
   h1{
