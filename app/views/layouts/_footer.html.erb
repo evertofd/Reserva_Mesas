@@ -15,16 +15,19 @@
 
       </ul>
     </div>
+
+
+
     <div class="col-md-4 mt-5 d-none d-sm-none d-md-block">
       <h2 class="text-uppercase font-weight-bold mb-4 text-center">Navega</h2>
       <ul class="list-unstyled text-center" >
-        <li class="mb-2"><a href="#" class="text-white letra"><h3>Menu</h3></a></li>
+        <li class="mb-2"><a href="<%= menu_index_path %>" class="text-white letra"><h3>Menu</h3></a></li>
         <br>
-        <li class="mb-2"><a href="#" class="text-white letra"><h3>Reserva</h3> </a></li>
+        <li class="mb-2"><a href="<%= new_user_session_path %>" class="text-white letra"><h3>Reserva</h3> </a></li>
         <br>
-        <li class="mb-2"><a href="#" class="text-white letra"><h3>Comentarios</h3></a></li>
+        <li class="mb-2"><a href="<%= posts_path %>" class="text-white letra"><h3>Comentarios</h3></a></li>
         <br>
-        <li class="mb-2"><a href="#" class="text-white letra"><h3>Contacto </h3></a></li>
+        <li class="mb-2"><a href="<%= new_contact_path %>" class="text-white letra"><h3>Contacto </h3></a></li>
       </ul>
 
     </div>
@@ -33,9 +36,9 @@
       <h3 class="text-uppercase font-weight-bold text-center">Delivery</h3>
       <p class="text-white letra mb-4 text-center">Estamos presentes en:</p>
       <ul class="list-inline text-center">
-        <li class="list-inline-item"><a href="#" target="_blank" title="twitter"><%= image_tag 'ubera.png', class: 'img-footer'%></a></li>
-        <li class="list-inline-item"><a href="https://www.facebook.com/campechecl/" target="_blank" title="facebook">  <%= image_tag 'rappi.png', class: 'img-footer'%></a></li>
-        <li class="list-inline-item"><a href="https://www.instagram.com/campechecl/?hl=es-la" target="_blank" title="instagram"><%= image_tag 'pedidosya.png', class: 'img-footer'%></a></li>
+        <li class="list-inline-item"><a href="https://www.ubereats.com/cl/santiago/food-delivery/campeche/0AVj1LZtS8qf4IXgkXYcMw" target="_blank" title="uber"><%= image_tag 'ubera.png', class: 'img-footer'%></a></li>
+        <li class="list-inline-item"><a href="https://www.rappi.cl/restaurantes" target="_blank" title="rappi">  <%= image_tag 'rappi.png', class: 'img-footer'%></a></li>
+        <li class="list-inline-item"><a href="https://www.pedidosya.cl/restaurantes/santiago/campeche-menu" target="_blank" title="pedidosya"><%= image_tag 'pedidosya.png', class: 'img-footer'%></a></li>
       </ul>
     </div>
   </div>

@@ -14,7 +14,7 @@
 
         <li class="nav-item active text-white letra" style="margin-right: 30px; margin-top: 8px;" id="sidebarCollapse" type="button"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">|</small></li>
         <li class="nav-item" style="margin-right: 30px; "><a class=" nav-link text-white letra" href="<%= destroy_user_session_path %>" data-method="DELETE"><i class="fas fa-sign-out-alt"></i>|</a></li>
-        <li class="nav-item"><a class=" nav-link text-white letra"><i class="fas fa-users-cog mr-2"></i><%= current_user.email %></a></li>
+        <li class="nav-item"><a class=" nav-link text-white letra"><i class="fas fa-users-cog mr-2"></i><%= current_user.name %></a></li>
 
         <% elsif user_signed_in? %>
         <li class="nav-item active"><a class=" nav-link text-white letra" href="<%= home_index_path %>">Inicio|</a></li>
@@ -23,7 +23,7 @@
         <li class="nav-item"><a class=" nav-link text-white letra" href="<%= posts_path %>">Comentarios|</a></li>
         <li class="nav-item"><a class=" nav-link text-white letra" href="<%= new_contact_path %>">Contacto|</a></li>
         <li class="nav-item"><a href="<%= destroy_user_session_path %>" data-method="DELETE">Salir|</a></li>
-        <li class="nav-item"><a class=" nav-link text-white letra"><%= current_user.email %></a></li>
+        <li class="nav-item"><a class=" nav-link text-white letra"><%= current_user.name %></a></li>
         <% else %>
         <li class="nav-item active"><a class=" nav-link text-white letra" href="<%= home_index_path %>">Inicio|</a></li>
         <li class="nav-item"><a class=" nav-link text-white letra" href="<%= menu_index_path %>">Menú|</a></li>

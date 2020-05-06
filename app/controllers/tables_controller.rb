@@ -30,7 +30,7 @@ class TablesController < ApplicationController
 
     respond_to do |format|
       if @table.save
-        format.html { redirect_to tables_path, notice: 'Table was successfully created.' }
+        format.html { redirect_to tables_path, notice: 'La mesa fue creada correctamente.' }
         format.json { render :show, status: :created, location: @table }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class TablesController < ApplicationController
   def update
     respond_to do |format|
       if @table.update(table_params)
-        format.html { redirect_to tables_path, notice: 'Table was successfully updated.' }
+        format.html { redirect_to tables_path, notice: 'La mesa fue actualizada' }
         format.json { render :show, status: :ok, location: @table }
       else
         format.html { render :edit }
@@ -58,7 +58,7 @@ class TablesController < ApplicationController
   def destroy
     @table.destroy
     respond_to do |format|
-      format.html { redirect_to tables_url, notice: 'Table was successfully destroyed.' }
+      format.html { redirect_to tables_url, notice: 'La mesa fue eliminada.' }
       format.json { head :no_content }
     end
   end

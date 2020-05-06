@@ -19,7 +19,6 @@
 //= require bootstrap4-datetimepicker/build/js/bootstrap-datetimepicker.min
 //= require @fortawesome/fontawesome-free/js/all
 //= require fullcalendar/dist/fullcalendar
-//= require leaflet-google
 //= require leaflet
 //= require turbolinks
 //= require_tree .

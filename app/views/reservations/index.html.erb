@@ -19,7 +19,7 @@
 
       <!--  reservation.user.nil??"":reservation.user.email -->
       <!-- reservation.try(:user).try(:email) -->
-    <% (reservation.user.nil?)?"-":reservation.try(:user).email %>
+    <% (reservation.user.nil?)?"-":reservation.try(:user).name %>
     <%# <% reservation.tables.first.space.name %> %>
     <% link_to 'Detalle', reservation %>
     <% link_to 'Editar', edit_reservation_path(reservation) %>

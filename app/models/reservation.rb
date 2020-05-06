@@ -7,14 +7,14 @@ class Reservation < ApplicationRecord
   end
 
   def title
-    (self.user.nil?)?"-":self.try(:user).email
+    (self.user.nil?)?"-":self.try(:user).name
   end
 
   def editable?
     Date.today < start_date ? true : false
   end
 
-  
+
 
   has_and_belongs_to_many :tables
   belongs_to :user

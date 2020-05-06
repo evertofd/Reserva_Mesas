@@ -1,5 +1,9 @@
 
+<div class="ta">
+
+
 <p id="notice"><%= notice %></p>
+
 <h2 class=" font-weight-bold text-center my-4 text-white radio">Comentarios</h2>
 <% if user_signed_in?  %>
 <p class="text-center text-white"><%= link_to 'Crear un Comentario', new_post_path,class: 'btn btn-sm btn-success text-white'%></p>
@@ -46,8 +50,8 @@
                 <ol class="breadcrumb breadcrumb-bullet">
 
 
-                  <li class="breadcrumb-item text-uppercase"><strong>Usuario:</strong> <%= post.user.email %></li>
-                  <li class="breadcrumb-item text-uppercase text-right"><%= DateTime.now.strftime("%d-%m-%Y") %></li>
+                  <li class="breadcrumb-item text-uppercase"><strong>Usuario:</strong> <%= post.user.name %></li>
+                  <li class="breadcrumb-item text-uppercase text-right"><strong>Comentado el:</strong><%= post.created_at %></li>
 
                 </ol>
               </nav>
@@ -87,5 +91,5 @@
     </div>
   </div>
 </div>
-
+</div>
 <br>

@@ -5,7 +5,7 @@
 
 <p id="notice"><%= notice %></p>
 
-<h2 class= "text-white text-center" style="margin-top: 80px;">Reservaciones</h2>
+<h2 class= "text-white text-center ta">Reservaciones</h2>
 <div class="col-md-12">
 
 
@@ -36,7 +36,7 @@
       <td><%= reservation.tables.first.space.name %></td>
       <!--    <td>reservation.user.nil??"":reservation.user.email </td>-->
       <!-- reservation.try(:user).try(:email) -->
-      <td><%= (reservation.user.nil?)?"-":reservation.try(:user).email %></td>
+      <td><%= (reservation.user.nil?)?"-":reservation.try(:user).name %></td>
       <td><%= reservation.status%></td>
       <td><%= link_to 'Detalle', reservation, class: 'btn btn-primary text-white' %></td>
       <td><%= link_to 'Editar', edit_reservation_path(reservation), class: 'btn btn-warning text-white' %></td>
@@ -48,3 +48,7 @@
 
 </div>
 </div>
+<br>
+<br>
+<br>
+<br>

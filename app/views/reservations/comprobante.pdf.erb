@@ -19,6 +19,9 @@
       <div class="col-md-6 col-sm-12 align-items-center">
         <li class="timeline-item bg-white rounded ml-3 p-4 shadow">
           <h2 class="text-small text-center mt-2 font-weight-light" style= "font-family: 'Montserrat', sans-serif; font-size: '30px'"><i class="fas fa-user-friends"></i>Nombre:</h2>
+          <h3 class="text-small text-center mt-2 font-weight-light" style= "font-family: 'Montserrat', sans-serif; font-size: '30px'"><%= current_user.reservations.last.user.name%></h3>
+          <br>
+          <h2 class="text-small text-center mt-2 font-weight-light" style= "font-family: 'Montserrat', sans-serif; font-size: '30px'"><i class="fas fa-user-friends"></i>Email:</h2>
           <h3 class="text-small text-center mt-2 font-weight-light" style= "font-family: 'Montserrat', sans-serif; font-size: '30px'"><%= current_user.reservations.last.user.email%></h3>
           <br>
           <h2 class="text-small text-center mt-2 font-weight-light" style= "font-family: 'Montserrat', sans-serif; font-size: '30px'"><i class="far fa-clock"></i>Dia y Hora:</h2>

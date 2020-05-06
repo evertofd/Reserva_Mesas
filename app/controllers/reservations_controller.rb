@@ -12,7 +12,6 @@ class ReservationsController < ApplicationController
          format.json
          format.pdf { render template: 'reservations/comprobante', pdf: 'comprobante'}
        end
-
   end
 
   def bookings
@@ -106,7 +105,7 @@ class ReservationsController < ApplicationController
 
     @reservation.destroy
     respond_to do |format|
-      format.html { redirect_to reservations_url, notice: 'Reservation was successfully destroyed.' }
+      format.html { redirect_to reservations_url, notice: 'La reserva fue eliminada.' }
       format.json { head :no_content }
     end
   end
