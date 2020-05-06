@@ -9,7 +9,9 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.7'
 # Use postgresql as the database for Active Record
-gem 'pg', '>= 0.18', '< 2.0'
+group :production do
+  gem 'pg', '>= 0.18', '< 2.0'
+end
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -20,11 +22,16 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'cancancan'
+
 gem 'devise', git: 'https://github.com/plataformatec/devise.git'
+
 gem 'jquery-rails'
+
 gem 'momentjs-rails', '~> 2.9', :github => 'derekprior/momentjs-rails'
 gem 'font_awesome5_rails'
+
 gem 'omniauth-facebook'
+
 gem 'leaflet-rails'
 
 
@@ -36,6 +43,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 gem 'wicked_pdf'
+
 gem 'wkhtmltopdf-binary'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
