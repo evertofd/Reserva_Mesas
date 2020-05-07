@@ -6507,15 +6507,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 	margin-left: -12px;
 	border-right-color: #fff;
 	}
-/* line 1, C:/Users/evert/Desktop/Campeche2/app/assets/stylesheets/body.scss.erb */
-body {
-  background: url(/assets/piedra2-e8efc0c268bc91e9a74f31b17585bb6fe81dce584d9dc0f41f2c589acd2349e5.jpg);
-  background-repeat: no-repeat;
-  background-position: absolute;
-  background-size: cover;
-}
-
-/* line 10, C:/Users/evert/Desktop/Campeche2/app/assets/stylesheets/body.scss.erb */
+/* line 4, C:/Users/evert/Desktop/Campeche2/app/assets/stylesheets/body.scss.erb */
 .margen {
   padding-bottom: 40rem;
   margin-top: 0px;
@@ -6523,67 +6515,71 @@ body {
   margin-left: 0px;
   margin-bottom: 0px;
   padding-bottom: 0px;
+  background: url(/assets/piedra2-e8efc0c268bc91e9a74f31b17585bb6fe81dce584d9dc0f41f2c589acd2349e5.jpg);
+  background-repeat: no-repeat;
+  background-position: absolute;
+  background-size: cover;
 }
 
-/* line 19, C:/Users/evert/Desktop/Campeche2/app/assets/stylesheets/body.scss.erb */
+/* line 17, C:/Users/evert/Desktop/Campeche2/app/assets/stylesheets/body.scss.erb */
 .ta {
   margin-top: 80px;
 }
 
-/* line 24, C:/Users/evert/Desktop/Campeche2/app/assets/stylesheets/body.scss.erb */
+/* line 22, C:/Users/evert/Desktop/Campeche2/app/assets/stylesheets/body.scss.erb */
 .separator {
   margin: 3rem 0;
   border-bottom: 1px dashed #fff;
 }
 
-/* line 29, C:/Users/evert/Desktop/Campeche2/app/assets/stylesheets/body.scss.erb */
+/* line 27, C:/Users/evert/Desktop/Campeche2/app/assets/stylesheets/body.scss.erb */
 .text-uppercase {
   letter-spacing: 0.1em;
 }
 
-/* line 33, C:/Users/evert/Desktop/Campeche2/app/assets/stylesheets/body.scss.erb */
+/* line 31, C:/Users/evert/Desktop/Campeche2/app/assets/stylesheets/body.scss.erb */
 .text-gray {
   color: #aaa;
 }
 
-/* line 37, C:/Users/evert/Desktop/Campeche2/app/assets/stylesheets/body.scss.erb */
+/* line 35, C:/Users/evert/Desktop/Campeche2/app/assets/stylesheets/body.scss.erb */
 h2 {
   font-family: 'Yanone Kaffeesatz', sans-serif;
   font-weight: 700;
   font-size: 3rem;
 }
 
-/* line 43, C:/Users/evert/Desktop/Campeche2/app/assets/stylesheets/body.scss.erb */
+/* line 41, C:/Users/evert/Desktop/Campeche2/app/assets/stylesheets/body.scss.erb */
 h3 {
   font-family: 'Yanone Kaffeesatz', sans-serif;
   font-weight: 600;
 }
 
-/* line 47, C:/Users/evert/Desktop/Campeche2/app/assets/stylesheets/body.scss.erb */
+/* line 45, C:/Users/evert/Desktop/Campeche2/app/assets/stylesheets/body.scss.erb */
 h5 {
   font-family: 'Yanone Kaffeesatz', sans-serif;
   font-weight: 400;
 }
 
-/* line 51, C:/Users/evert/Desktop/Campeche2/app/assets/stylesheets/body.scss.erb */
+/* line 49, C:/Users/evert/Desktop/Campeche2/app/assets/stylesheets/body.scss.erb */
 h4 {
   font-family: 'Yanone Kaffeesatz', sans-serif;
   font-weight: 400;
 }
 
-/* line 55, C:/Users/evert/Desktop/Campeche2/app/assets/stylesheets/body.scss.erb */
+/* line 53, C:/Users/evert/Desktop/Campeche2/app/assets/stylesheets/body.scss.erb */
 h6 {
   font-family: 'Yanone Kaffeesatz', sans-serif;
   font-weight: 400;
 }
 
-/* line 59, C:/Users/evert/Desktop/Campeche2/app/assets/stylesheets/body.scss.erb */
+/* line 57, C:/Users/evert/Desktop/Campeche2/app/assets/stylesheets/body.scss.erb */
 h1 {
   font-family: 'Lobster', cursive;
   font-weight: 400;
 }
 
-/* line 64, C:/Users/evert/Desktop/Campeche2/app/assets/stylesheets/body.scss.erb */
+/* line 62, C:/Users/evert/Desktop/Campeche2/app/assets/stylesheets/body.scss.erb */
 ul.navbar-nav a {
   font-family: 'Yanone Kaffeesatz', sans-serif;
   font-weight: 400;
@@ -6653,7 +6649,7 @@ nav.redes-sociales a:last-child{
     background-repeat: no-repeat;
     background-position: center;
     background-size: 0%;
-    padding-bottom: 50rem;
+    padding-bottom: 30rem;
   }
 
 }
@@ -6839,13 +6835,14 @@ nav.redes-sociales a:last-child{
     margin-top: 40px;
   }
 }
-body {
+/* body {
   background-image: url("<%= wicked_pdf_image_tag 'piedra2.jpg' %>");
   background-repeat: no-repeat;
    background-position: absolute;
    background-size: cover;
    padding-bottom: 40rem;
-}
+} */
+
 
 .img-pequeña{
   width: 70px;
