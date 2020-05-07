@@ -18,13 +18,11 @@
 
 space1 = Space.create(
   name: "Salón",
-  url: "https://scontent.fscl8-1.fna.fbcdn.net/v/t31.0-8/p960x960/10857345_451122011719863_1750245465905278200_o.jpg?_nc_cat=106&_nc_sid=7aed08&_nc_ohc=nzt1qcSBmJQAX8BtHbo&_nc_ht=scontent.fscl8-1.fna&_nc_tp=6&oh=0758dc20004109d5aa31a99de959694e&oe=5E97EA44",
   slug: "salon"
 )
 
 space2 = Space.create(
   name: "Terraza",
-  url: "https://scontent.fscl8-1.fna.fbcdn.net/v/t31.0-8/p960x960/10857345_451122011719863_1750245465905278200_o.jpg?_nc_cat=106&_nc_sid=7aed08&_nc_ohc=nzt1qcSBmJQAX8BtHbo&_nc_ht=scontent.fscl8-1.fna&_nc_tp=6&oh=0758dc20004109d5aa31a99de959694e&oe=5E97EA44",
   slug: "terraza"
 )
 
