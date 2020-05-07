@@ -1,10 +1,10 @@
-body {
+/* body {
   background-image: url("<%= wicked_pdf_image_tag 'piedra2.jpg' %>");
   background-repeat: no-repeat;
    background-position: absolute;
    background-size: cover;
    padding-bottom: 40rem;
-}
+} */
 
 .img-pequeña{
   width: 70px;
