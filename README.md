@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Deploy heroku https://campechecl.herokuapp.com/
 
-Things you may want to cover:
+Para correr este proyecto seguir los siguientes pasos.
 
-* Ruby version
+Pasos:
 
-* System dependencies
+* Version de rails = rails 5.1.7
 
-* Configuration
+* Configure el database.yml y luego rails db:create
 
-* Database creation
+* Instale los paquetes de yarn con yarn install
 
-* Database initialization
+* Corra las migraciones con rails db:migrate
 
-* How to run the test suite
+* Corra los seed con rails db:seed
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+* Por ultimo cree un usuario administrador.
 
 * ...
