@@ -10,19 +10,26 @@ Rails.application.configure do
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
 
-  config.file_watcher = ActiveSupport::EventedFileUpdateChecker
-  config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default_url_options = { host: "campechecl.herokuapp.com"}
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    address: 'smtp.gmail.com',
-    port: 587,
-    domain:'example.com',
-    user_name: 'everto.fariasd2@gmail.com',
-    password: 'vhfalmsskqsasjwe',
-    authentication:'plain',
-    enable_starttls_auto: true }
-  end
+
+config.action_mailer.perform_deliveries = true
+config.action_mailer.raise_delivery_errors = true
+config.action_mailer.preview_path = "#{Rails.root}/tmp/mailers/previews"
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.smtp_settings = {
+  address: 'smtp.example.com',
+  port: 1025,
+  domain: 'example.com',
+  user_name: 'everto.fariasd2@gmail.com',
+  password: 'vhfalmsskqsasjwe',
+  authentication: 'plain',
+  enable_starttls_auto: true
+}
+config.action_mailer.default_url_options = {
+  host: 'campechecl.herokuapp.com',
+  port: 1025,
+  protocol: 'http'
+}
+
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
