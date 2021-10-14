@@ -1,21 +1,19 @@
-# README
 
-* Deploy heroku https://campechecl.herokuapp.com/
+# Reseva de Mesas
 
-Para correr este proyecto seguir los siguientes pasos.
+Aplicación desarrollada de un restaurante con el objetivo de permitir realizar reservaciones
 
-Pasos:
+## Autor
 
-* Version de rails = rails 5.1.7
+* Everto Farias - evertofd
 
-* Configure el database.yml y luego rails db:create
 
-* Instale los paquetes de yarn con yarn install
+## Construido Con
 
-* Corra las migraciones con rails db:migrate
+* Rails 5.1.7
+* Ruby 2.6.3
 
-* Corra los seed con rails db:seed
 
-* Por ultimo cree un usuario administrador.
+## Despliegue
 
-* ...
+https://campechecl.herokuapp.com/
