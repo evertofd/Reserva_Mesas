@@ -7,6 +7,6 @@
     "bootstrap4-datetimepicker": "^5.2.3",
     "fullcalendar": "^3.10.1",
     "jquery": "^3.5.0",
-    "moment": "^2.24.0"
+    "moment": "^2.29.2"
   }
 }
